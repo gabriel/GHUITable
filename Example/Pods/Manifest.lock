@@ -1,0 +1,62 @@
+PODS:
+  - AFNetworking (2.5.1):
+    - AFNetworking/NSURLConnection (= 2.5.1)
+    - AFNetworking/NSURLSession (= 2.5.1)
+    - AFNetworking/Reachability (= 2.5.1)
+    - AFNetworking/Security (= 2.5.1)
+    - AFNetworking/Serialization (= 2.5.1)
+    - AFNetworking/UIKit (= 2.5.1)
+  - AFNetworking/NSURLConnection (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.1)
+  - AFNetworking/Security (2.5.1)
+  - AFNetworking/Serialization (2.5.1)
+  - AFNetworking/UIKit (2.5.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CocoaLumberjack (1.9.2):
+    - CocoaLumberjack/Extensions (= 1.9.2)
+  - CocoaLumberjack/Core (1.9.2)
+  - CocoaLumberjack/Extensions (1.9.2):
+    - CocoaLumberjack/Core
+  - GHKit (1.0.21)
+  - GHUITable (0.0.2):
+    - GHKit
+    - ObjectiveSugar
+  - ObjectiveSugar (1.1.0)
+  - YapDatabase (2.5.4):
+    - YapDatabase/standard (= 2.5.4)
+  - YapDatabase/common (2.5.4):
+    - CocoaLumberjack (~> 1)
+  - YapDatabase/standard (2.5.4):
+    - YapDatabase/common
+  - YOLayout (0.1.4)
+
+DEPENDENCIES:
+  - AFNetworking
+  - GHKit
+  - GHUITable (from `../../GHUITable/`)
+  - ObjectiveSugar
+  - YapDatabase
+  - YOLayout
+
+EXTERNAL SOURCES:
+  GHUITable:
+    :path: ../../GHUITable/
+
+SPEC CHECKSUMS:
+  AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
+  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
+  GHKit: b6f2b698849faca1156a6e64d19efa4195147277
+  GHUITable: 7fb3012083b46af5b782892b09926f092cf1ac77
+  ObjectiveSugar: f48793f5902c77cfc02a4ce46d2e8ecddcad4dc2
+  YapDatabase: c1d6912df1b4a160f7373ee7657d360e29bb00fd
+  YOLayout: d082f2348d374bccab7f7c6b2d69b999c95e4c3a
+
+COCOAPODS: 0.35.0

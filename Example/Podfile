@@ -1,0 +1,11 @@
+platform :ios, "7.0"
+
+pod "GHUITable", :path => "../../GHUITable/"
+
+pod "GHKit"
+pod "ObjectiveSugar"
+
+pod "AFNetworking"
+pod "YapDatabase"
+pod "YOLayout"
+
