@@ -74,7 +74,7 @@ Or access methods on the datasource. (You can pass nil for indexPaths if you don
 
 ## GUITableViewCell
 
-This allows you to turn any view into a UITableView cell in just a few lines of code.
+This allows you to turn any view into a UITableViewCell in just a few lines of code.
 
 For example, `GHUITextImageCell` is defined as:
 
@@ -87,7 +87,9 @@ For example, `GHUITextImageCell` is defined as:
 @end
 ```
 
-That's it. [GHUITextImageView](https://github.com/gabriel/GHUITable/blob/master/Example/Example/GHUITextImageView.m) is a UIView that is wrapped. It's also an example of a view using [YOLayout](https://github.com/YOLayout/YOLayout) which you should also check out!
+That's it. [GHUITextImageView](https://github.com/gabriel/GHUITable/blob/master/Example/Example/GHUITextImageView.m). 
+
+That's also an example of a view using [YOLayout](https://github.com/YOLayout/YOLayout) which you should also check out!
 
 ## GHUITableView (More complex example)
 
@@ -119,7 +121,7 @@ tableView.dataSource.cellSetBlock = ^(GHUITableViewCell *cell, NSDictionary *dic
 
 ## GHUITableView (Static Content)
 
-Sometimes it's useful to use table views even when you have static content. You can add a UIView to the data source instead of a data model. This bypasses the cell rendering pattern and allows you use some UITableView features.
+Sometimes it's useful to use table views even when you have static content. You can add a UIView to the data source instead of data. This bypasses the cell rendering pattern so it's not appropriate for when you have tons of content.
 
 ```objc
 tableView = [[GHUITableView alloc] init];
@@ -128,12 +130,12 @@ tableView = [[GHUITableView alloc] init];
 // In this scenario you are not re-using views and is appropriate for when you have static content.
 GHUITextImageView *view = [[GHUITextImageView alloc] init];
 [view setName:@"Name2" description:@"This is a description #2" image:[UIImage imageNamed:@"Preview2-Filled"]];
-[tableView.dataSource addObjects:@[view] section:0];
+[tableView addObjects:@[view] section:0 animated:NO];
 
 // You can even add a cell as a data object source (although this is probably a little awkward, can be useful sometimes).
 GHUITextImageCell *cell = [[GHUITextImageCell alloc] init];
 [cell.viewForContent setName:@"Name1" description:@"This is a description #1" image:[UIImage imageNamed:@"Preview2"]];
-[tableView.dataSource addObjects:@[cell] section:1];
+[tableView addObjects:@[cell] section:1 animated:NO];
 ```
 
 ## GHUICollectionView
