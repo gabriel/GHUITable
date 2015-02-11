@@ -87,9 +87,7 @@ For example, `GHUITextImageCell` is defined as:
 @end
 ```
 
-That's it. [GHUITextImageView](https://github.com/gabriel/GHUITable/blob/master/Example/Example/GHUITextImageView.m). 
-
-That's also an example of a view using [YOLayout](https://github.com/YOLayout/YOLayout) which you should also check out!
+[GHUITextImageView](https://github.com/gabriel/GHUITable/blob/master/Example/Example/GHUITextImageView.m) is also an example of a view using [YOLayout](https://github.com/YOLayout/YOLayout) which you should also check out!
 
 ## GHUITableView (More complex example)
 
