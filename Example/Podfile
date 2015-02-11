@@ -8,4 +8,5 @@ pod "ObjectiveSugar"
 pod "AFNetworking"
 pod "YapDatabase"
 pod "YOLayout"
+pod "SDWebImage"
 

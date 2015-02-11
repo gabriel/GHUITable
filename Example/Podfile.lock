@@ -30,6 +30,9 @@ PODS:
     - GHKit
     - ObjectiveSugar
   - ObjectiveSugar (1.1.0)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core (= 3.7.1)
+  - SDWebImage/Core (3.7.1)
   - YapDatabase (2.5.4):
     - YapDatabase/standard (= 2.5.4)
   - YapDatabase/common (2.5.4):
@@ -43,6 +46,7 @@ DEPENDENCIES:
   - GHKit
   - GHUITable (from `../../GHUITable/`)
   - ObjectiveSugar
+  - SDWebImage
   - YapDatabase
   - YOLayout
 
@@ -56,6 +60,7 @@ SPEC CHECKSUMS:
   GHKit: b6f2b698849faca1156a6e64d19efa4195147277
   GHUITable: 7fb3012083b46af5b782892b09926f092cf1ac77
   ObjectiveSugar: f48793f5902c77cfc02a4ce46d2e8ecddcad4dc2
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   YapDatabase: c1d6912df1b4a160f7373ee7657d360e29bb00fd
   YOLayout: d082f2348d374bccab7f7c6b2d69b999c95e4c3a
 

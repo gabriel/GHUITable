@@ -38,14 +38,14 @@
   CGSize switchSize = [_switchView sizeThatFits:size];
   _switchView.frame = CGRectMake(size.width - switchSize.width - 10, 15, switchSize.width, switchSize.height);
 
-  _label.frame = CGRectMake(15, y, size.width - switchSize.width - 25, 16);
-  y += 16;
+  _label.frame = CGRectMake(15, y, size.width - switchSize.width - 25, 18);
+  y += 18;
 
-  _descriptionLabel.frame = CGRectMake(15, y, size.width - 25 - switchSize.width, 25);
+  _descriptionLabel.frame = CGRectMake(15, y, size.width - 25 - switchSize.width, 18);
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
-  return CGSizeMake(size.width, 65);
+  return CGSizeMake(size.width, 56);
 }
 
 - (void)setTitle:(NSString *)title description:(NSString *)description on:(BOOL)on {

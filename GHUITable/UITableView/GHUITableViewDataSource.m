@@ -74,7 +74,7 @@
   if ([self headerTextForSection:section] && [self tableView:tableView numberOfRowsInSection:section] > 0) {
     return [[self tableView:tableView viewForHeaderInSection:section] sizeThatFits:tableView.frame.size].height;
   } else if (tableView.style == UITableViewStyleGrouped) {
-    return 21;
+    return 24;
   }
   
   return 0;
@@ -88,22 +88,8 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-  if (self.headerViewBlock) {
-    return self.headerViewBlock(tableView, section, [self headerTextForSection:section]);
-  } else {
-    NSString *text = [self headerTextForSection:section];
-    //if (!text) return nil;
-    
-    UILabel *label = [[UILabel alloc] init];
-    // TODO: Fix insets
-    //label.insets = UIEdgeInsetsMake(21, 15, 4, 0);
-    label.backgroundColor = [UIColor colorWithRed:246.0/255.0 green:246.0/255.0 blue:246.0/255.0 alpha:1.0];
-    label.text = [self headerTextForSection:section];
-    label.font = [UIFont systemFontOfSize:14];
-    label.textColor = [UIColor colorWithWhite:0.5 alpha:1.0];
-    label.text = [text uppercaseString];
-    return label;
-  }
+  NSAssert(self.headerViewBlock, @"No header view block defined");
+  return self.headerViewBlock(tableView, section, [self headerTextForSection:section]);
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {

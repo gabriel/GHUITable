@@ -50,6 +50,17 @@
   [_tableView.dataSource setHeaderText:@"Section 2" section:1];
   [_tableView.dataSource setHeaderText:@"Section 3 (Switch)" section:2];
 
+  // Set header view
+  _tableView.dataSource.headerViewBlock = ^(UITableView *tableView, NSInteger section, NSString *text) {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 300, 21)];
+    label.backgroundColor = [UIColor colorWithRed:246.0/255.0 green:246.0/255.0 blue:246.0/255.0 alpha:1.0];
+    label.text = text;
+    label.font = [UIFont systemFontOfSize:14];
+    label.textColor = [UIColor colorWithWhite:0.5 alpha:1.0];
+    label.text = [text uppercaseString];
+    return label;
+  };
+
   // The data
   [_tableView setObjects:
    @[

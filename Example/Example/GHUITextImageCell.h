@@ -19,6 +19,8 @@
 
 - (void)setName:(NSString *)name description:(NSString *)description image:(UIImage *)image;
 
+- (void)setName:(NSString *)name description:(NSString *)description imageURLString:(NSString *)imageURLString;
+
 @end
 
 @interface GHUITextImageCell : GHUITableViewCell

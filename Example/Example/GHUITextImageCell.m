@@ -8,6 +8,8 @@
 
 #import "GHUITextImageCell.h"
 
+#import <SDWebImage/UIImageView+WebCache.h>
+
 @interface GHUITextImageView ()
 @property UILabel *nameLabel;
 @property UILabel *descriptionLabel;
@@ -37,9 +39,8 @@
     CGFloat x = 15;
     CGFloat y = 10;
 
-    if (_imageView.image) {
-      _imageView.frame = CGRectMake(x, y, 50, 50);
-      x += 50 + 10;
+    if (_imageView.image || _imageView.sd_imageURL) {
+      x += [layout setFrame:CGRectMake(x, y, 50, 50) view:_imageView].size.width + 10;
     }
 
     y += [layout sizeToFitVerticalInFrame:CGRectMake(x, y, size.width - x - 5, 0) view:_nameLabel].size.height + 4;
@@ -57,6 +58,15 @@
   _descriptionLabel.text = description;
   _imageView.image = image;
   _imageView.hidden = !_imageView.image;
+  [self setNeedsDisplay];
+  [self setNeedsLayout];
+}
+
+- (void)setName:(NSString *)name description:(NSString *)description imageURLString:(NSString *)imageURLString {
+  _nameLabel.text = name;
+  _descriptionLabel.text = description;
+  _imageView.hidden = !imageURLString;
+  if (imageURLString) [_imageView sd_setImageWithURL:[NSURL URLWithString:imageURLString]];
   [self setNeedsDisplay];
   [self setNeedsLayout];
 }
