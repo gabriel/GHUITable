@@ -10,8 +10,8 @@
 
 #import <GHUITable/GHUITable.h>
 
-#import "GHUITextImageCell.h"
-#import "GHUISwitchCell.h"
+#import "GHUITextImageView.h"
+#import "GHUISwitchView.h"
 
 @interface GHMainView ()
 @property GHUITableView *tableView;
@@ -25,12 +25,12 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
   if ((self = [super initWithFrame:frame])) {
-    [self sharedInit];
+    [self viewInit];
   }
   return self;
 }
 
-- (void)sharedInit {
+- (void)viewInit {
   _tableView = [[GHUITableView alloc] init];
   [self addSubview:_tableView];
 

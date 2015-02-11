@@ -1,5 +1,5 @@
 //
-//  GHUICatalogSwitchCell.h
+//  GHUISwitchView.h
 //  GHUICatalog
 //
 //  Created by Gabriel Handford on 3/31/14.

@@ -1,12 +1,12 @@
 //
-//  GHUICatalogCell.m
-//  GHUICatalog
+//  GHUITextImageView.m
+//  GHUITable
 //
 //  Created by Gabriel Handford on 3/19/14.
 //  Copyright (c) 2014 Gabriel Handford. All rights reserved.
 //
 
-#import "GHUITextImageCell.h"
+#import "GHUITextImageView.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 

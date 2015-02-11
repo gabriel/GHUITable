@@ -1,12 +1,12 @@
 //
-//  GHUICatalogSwitchCell.m
-//  GHUICatalog
+//  GHUISwitchView.m
+//  GHUITable
 //
 //  Created by Gabriel Handford on 3/31/14.
 //  Copyright (c) 2014 Gabriel Handford. All rights reserved.
 //
 
-#import "GHUISwitchCell.h"
+#import "GHUISwitchView.h"
 
 @implementation GHUISwitchView
 

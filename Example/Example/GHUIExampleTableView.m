@@ -8,7 +8,7 @@
 
 #import "GHUIExampleTableView.h"
 
-#import "GHUITextImageCell.h"
+#import "GHUITextImageView.h"
 
 @interface GHUIExampleTableView ()
 @property GHUITableView *tableView;

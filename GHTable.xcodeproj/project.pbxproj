@@ -26,10 +26,10 @@
 		00B544DD1A8AB8160044CC5B /* GHUITableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544C41A8AB8160044CC5B /* GHUITableViewDataSource.m */; };
 		00B544DE1A8AB8160044CC5B /* GHUITableViewDetailCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B544C51A8AB8160044CC5B /* GHUITableViewDetailCell.h */; };
 		00B544DF1A8AB8160044CC5B /* GHUITableViewDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544C61A8AB8160044CC5B /* GHUITableViewDetailCell.m */; };
-		00B544E01A8AB8160044CC5B /* GHUIYapTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B544C81A8AB8160044CC5B /* GHUIYapTableView.h */; };
-		00B544E11A8AB8160044CC5B /* GHUIYapTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544C91A8AB8160044CC5B /* GHUIYapTableView.m */; };
-		00B544E21A8AB8160044CC5B /* GHUIYapTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B544CA1A8AB8160044CC5B /* GHUIYapTableViewDataSource.h */; };
-		00B544E31A8AB8160044CC5B /* GHUIYapTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544CB1A8AB8160044CC5B /* GHUIYapTableViewDataSource.m */; };
+		00E64C271A8AE20900CACF44 /* GHUIYapTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E64C231A8AE20900CACF44 /* GHUIYapTableView.h */; };
+		00E64C281A8AE20900CACF44 /* GHUIYapTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E64C241A8AE20900CACF44 /* GHUIYapTableView.m */; };
+		00E64C291A8AE20900CACF44 /* GHUIYapTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E64C251A8AE20900CACF44 /* GHUIYapTableViewDataSource.h */; };
+		00E64C2A1A8AE20900CACF44 /* GHUIYapTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E64C261A8AE20900CACF44 /* GHUIYapTableViewDataSource.m */; };
 		CDBB536CB90441CB7E4AAD23 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B230DA838E9693C80B7F14A1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -58,10 +58,10 @@
 		00B544C41A8AB8160044CC5B /* GHUITableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITableViewDataSource.m; sourceTree = "<group>"; };
 		00B544C51A8AB8160044CC5B /* GHUITableViewDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUITableViewDetailCell.h; sourceTree = "<group>"; };
 		00B544C61A8AB8160044CC5B /* GHUITableViewDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITableViewDetailCell.m; sourceTree = "<group>"; };
-		00B544C81A8AB8160044CC5B /* GHUIYapTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIYapTableView.h; sourceTree = "<group>"; };
-		00B544C91A8AB8160044CC5B /* GHUIYapTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIYapTableView.m; sourceTree = "<group>"; };
-		00B544CA1A8AB8160044CC5B /* GHUIYapTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIYapTableViewDataSource.h; sourceTree = "<group>"; };
-		00B544CB1A8AB8160044CC5B /* GHUIYapTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIYapTableViewDataSource.m; sourceTree = "<group>"; };
+		00E64C231A8AE20900CACF44 /* GHUIYapTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIYapTableView.h; sourceTree = "<group>"; };
+		00E64C241A8AE20900CACF44 /* GHUIYapTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIYapTableView.m; sourceTree = "<group>"; };
+		00E64C251A8AE20900CACF44 /* GHUIYapTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIYapTableViewDataSource.h; sourceTree = "<group>"; };
+		00E64C261A8AE20900CACF44 /* GHUIYapTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIYapTableViewDataSource.m; sourceTree = "<group>"; };
 		54BB3AC5DCC333001393B155 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A8A8A8359064773496E76972 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B230DA838E9693C80B7F14A1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +86,7 @@
 				00B544A51A8AB4AB0044CC5B /* README.md */,
 				00B544A41A8AB3370044CC5B /* Podfile */,
 				00B544B01A8AB8160044CC5B /* GHUITable */,
+				00E64C221A8AE20900CACF44 /* YapTableView */,
 				00B544561A8AB2D10044CC5B /* Products */,
 				1AF86D045F2E3BFFA949A546 /* Pods */,
 				17332064DB62A571D517ADD5 /* Frameworks */,
@@ -107,7 +108,6 @@
 				00B544B21A8AB8160044CC5B /* Info.plist */,
 				00B544B31A8AB8160044CC5B /* UICollectionView */,
 				00B544BE1A8AB8160044CC5B /* UITableView */,
-				00B544C71A8AB8160044CC5B /* YapTableView */,
 			);
 			path = GHUITable;
 			sourceTree = "<group>";
@@ -144,13 +144,13 @@
 			path = UITableView;
 			sourceTree = "<group>";
 		};
-		00B544C71A8AB8160044CC5B /* YapTableView */ = {
+		00E64C221A8AE20900CACF44 /* YapTableView */ = {
 			isa = PBXGroup;
 			children = (
-				00B544C81A8AB8160044CC5B /* GHUIYapTableView.h */,
-				00B544C91A8AB8160044CC5B /* GHUIYapTableView.m */,
-				00B544CA1A8AB8160044CC5B /* GHUIYapTableViewDataSource.h */,
-				00B544CB1A8AB8160044CC5B /* GHUIYapTableViewDataSource.m */,
+				00E64C231A8AE20900CACF44 /* GHUIYapTableView.h */,
+				00E64C241A8AE20900CACF44 /* GHUIYapTableView.m */,
+				00E64C251A8AE20900CACF44 /* GHUIYapTableViewDataSource.h */,
+				00E64C261A8AE20900CACF44 /* GHUIYapTableViewDataSource.m */,
 			);
 			path = YapTableView;
 			sourceTree = "<group>";
@@ -181,12 +181,12 @@
 			files = (
 				00B544D01A8AB8160044CC5B /* GHUICellDataSource.h in Headers */,
 				00B544DA1A8AB8160044CC5B /* GHUITableViewCell.h in Headers */,
-				00B544E01A8AB8160044CC5B /* GHUIYapTableView.h in Headers */,
+				00E64C271A8AE20900CACF44 /* GHUIYapTableView.h in Headers */,
 				00B544D61A8AB8160044CC5B /* GHUICollectionViewDataSource.h in Headers */,
 				00B544D81A8AB8160044CC5B /* GHUITableView.h in Headers */,
 				00B544CC1A8AB8160044CC5B /* GHUITable.h in Headers */,
 				00B544D21A8AB8160044CC5B /* GHUICollectionView.h in Headers */,
-				00B544E21A8AB8160044CC5B /* GHUIYapTableViewDataSource.h in Headers */,
+				00E64C291A8AE20900CACF44 /* GHUIYapTableViewDataSource.h in Headers */,
 				00B544DC1A8AB8160044CC5B /* GHUITableViewDataSource.h in Headers */,
 				00B544D41A8AB8160044CC5B /* GHUICollectionViewCell.h in Headers */,
 				00B544DE1A8AB8160044CC5B /* GHUITableViewDetailCell.h in Headers */,
@@ -299,10 +299,10 @@
 				00B544DF1A8AB8160044CC5B /* GHUITableViewDetailCell.m in Sources */,
 				00B544D31A8AB8160044CC5B /* GHUICollectionView.m in Sources */,
 				00B544CF1A8AB8160044CC5B /* GHUIBaseCellDataSource.m in Sources */,
-				00B544E11A8AB8160044CC5B /* GHUIYapTableView.m in Sources */,
+				00E64C281A8AE20900CACF44 /* GHUIYapTableView.m in Sources */,
 				00B544D71A8AB8160044CC5B /* GHUICollectionViewDataSource.m in Sources */,
 				00B544DB1A8AB8160044CC5B /* GHUITableViewCell.m in Sources */,
-				00B544E31A8AB8160044CC5B /* GHUIYapTableViewDataSource.m in Sources */,
+				00E64C2A1A8AE20900CACF44 /* GHUIYapTableViewDataSource.m in Sources */,
 				00B544D11A8AB8160044CC5B /* GHUICellDataSource.m in Sources */,
 				00B544D91A8AB8160044CC5B /* GHUITableView.m in Sources */,
 				00B544D51A8AB8160044CC5B /* GHUICollectionViewCell.m in Sources */,

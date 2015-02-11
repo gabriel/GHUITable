@@ -11,9 +11,9 @@
 		00A4121E1829DC5900C5A20F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A4121D1829DC5900C5A20F /* CoreGraphics.framework */; };
 		00A412201829DC5900C5A20F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A4121F1829DC5900C5A20F /* UIKit.framework */; };
 		00B545071A8AB8790044CC5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544E61A8AB8790044CC5B /* AppDelegate.m */; };
-		00B5450D1A8AB8790044CC5B /* GHUITextImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544F21A8AB8790044CC5B /* GHUITextImageCell.m */; };
+		00B5450D1A8AB8790044CC5B /* GHUITextImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544F21A8AB8790044CC5B /* GHUITextImageView.m */; };
 		00B545111A8AB8790044CC5B /* GHUIExampleStaticTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544FA1A8AB8790044CC5B /* GHUIExampleStaticTableView.m */; };
-		00B545121A8AB8790044CC5B /* GHUISwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544FC1A8AB8790044CC5B /* GHUISwitchCell.m */; };
+		00B545121A8AB8790044CC5B /* GHUISwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544FC1A8AB8790044CC5B /* GHUISwitchView.m */; };
 		00B545131A8AB8790044CC5B /* GHUIExampleMultiCellTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544FE1A8AB8790044CC5B /* GHUIExampleMultiCellTableView.m */; };
 		00B545161A8AB8790044CC5B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B545031A8AB8790044CC5B /* Images.xcassets */; };
 		00B545171A8AB8790044CC5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B545041A8AB8790044CC5B /* main.m */; };
@@ -32,12 +32,12 @@
 		00A4124A1829DC9300C5A20F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		00B544E51A8AB8790044CC5B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00B544E61A8AB8790044CC5B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		00B544F11A8AB8790044CC5B /* GHUITextImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUITextImageCell.h; sourceTree = "<group>"; };
-		00B544F21A8AB8790044CC5B /* GHUITextImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITextImageCell.m; sourceTree = "<group>"; };
+		00B544F11A8AB8790044CC5B /* GHUITextImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUITextImageView.h; sourceTree = "<group>"; };
+		00B544F21A8AB8790044CC5B /* GHUITextImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITextImageView.m; sourceTree = "<group>"; };
 		00B544F91A8AB8790044CC5B /* GHUIExampleStaticTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIExampleStaticTableView.h; sourceTree = "<group>"; };
 		00B544FA1A8AB8790044CC5B /* GHUIExampleStaticTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIExampleStaticTableView.m; sourceTree = "<group>"; };
-		00B544FB1A8AB8790044CC5B /* GHUISwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUISwitchCell.h; sourceTree = "<group>"; };
-		00B544FC1A8AB8790044CC5B /* GHUISwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUISwitchCell.m; sourceTree = "<group>"; };
+		00B544FB1A8AB8790044CC5B /* GHUISwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUISwitchView.h; sourceTree = "<group>"; };
+		00B544FC1A8AB8790044CC5B /* GHUISwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUISwitchView.m; sourceTree = "<group>"; };
 		00B544FD1A8AB8790044CC5B /* GHUIExampleMultiCellTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIExampleMultiCellTableView.h; sourceTree = "<group>"; };
 		00B544FE1A8AB8790044CC5B /* GHUIExampleMultiCellTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIExampleMultiCellTableView.m; sourceTree = "<group>"; };
 		00B545031A8AB8790044CC5B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -111,10 +111,10 @@
 				00B544FA1A8AB8790044CC5B /* GHUIExampleStaticTableView.m */,
 				00B544FD1A8AB8790044CC5B /* GHUIExampleMultiCellTableView.h */,
 				00B544FE1A8AB8790044CC5B /* GHUIExampleMultiCellTableView.m */,
-				00B544F11A8AB8790044CC5B /* GHUITextImageCell.h */,
-				00B544F21A8AB8790044CC5B /* GHUITextImageCell.m */,
-				00B544FB1A8AB8790044CC5B /* GHUISwitchCell.h */,
-				00B544FC1A8AB8790044CC5B /* GHUISwitchCell.m */,
+				00B544F11A8AB8790044CC5B /* GHUITextImageView.h */,
+				00B544F21A8AB8790044CC5B /* GHUITextImageView.m */,
+				00B544FB1A8AB8790044CC5B /* GHUISwitchView.h */,
+				00B544FC1A8AB8790044CC5B /* GHUISwitchView.m */,
 				00E64C041A8AC54000CACF44 /* GHMainView.h */,
 				00E64C051A8AC54000CACF44 /* GHMainView.m */,
 				00B545031A8AB8790044CC5B /* Images.xcassets */,
@@ -240,9 +240,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				00B545131A8AB8790044CC5B /* GHUIExampleMultiCellTableView.m in Sources */,
-				00B545121A8AB8790044CC5B /* GHUISwitchCell.m in Sources */,
+				00B545121A8AB8790044CC5B /* GHUISwitchView.m in Sources */,
 				00B545071A8AB8790044CC5B /* AppDelegate.m in Sources */,
-				00B5450D1A8AB8790044CC5B /* GHUITextImageCell.m in Sources */,
+				00B5450D1A8AB8790044CC5B /* GHUITextImageView.m in Sources */,
 				00B545111A8AB8790044CC5B /* GHUIExampleStaticTableView.m in Sources */,
 				00E64C031A8AC36200CACF44 /* GHUIExampleTableView.m in Sources */,
 				00E64C061A8AC54000CACF44 /* GHMainView.m in Sources */,

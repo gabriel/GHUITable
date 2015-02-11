@@ -10,8 +10,8 @@
 
 #import "GHUIExampleMultiCellTableView.h"
 
-#import "GHUITextImageCell.h"
-#import "GHUISwitchCell.h"
+#import "GHUITextImageView.h"
+#import "GHUISwitchView.h"
 
 @interface GHUIExampleMultiCellTableView ()
 @property GHUITableView *tableView;

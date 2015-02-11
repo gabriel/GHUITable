@@ -8,17 +8,22 @@
 
 Pod::Spec.new do |s|
 
-s.name         = "GHUITable"
-s.version      = "0.0.2"
-s.summary      = "UI framework."
-s.homepage     = "https://github.com/gabriel/GHUITable"
-s.license      = 'MIT'
-s.author       = { "Gabriel Handford" => "gabrielh@gmail.com" }
-s.source       = { :git => "https://github.com/gabriel/GHUITable", :tag => s.version.to_s }
-s.platform     = :ios, '7.0'
-s.source_files = 'GHUITable/**/*.{h,m}'
-s.dependency 'GHKit'
-s.dependency 'ObjectiveSugar'
-s.requires_arc = true
+  s.name         = "GHUITable"
+  s.version      = "0.0.2"
+  s.summary      = "UI framework."
+  s.homepage     = "https://github.com/gabriel/GHUITable"
+  s.license      = 'MIT'
+  s.author       = { "Gabriel Handford" => "gabrielh@gmail.com" }
+  s.source       = { :git => "https://github.com/gabriel/GHUITable", :tag => s.version.to_s }
+  s.platform     = :ios, '7.0'
+  s.source_files = 'GHUITable/**/*.{h,m}'
+  s.dependency 'GHKit'
+  s.dependency 'ObjectiveSugar'
+  s.requires_arc = true
+
+  s.subspec "Yap" do |a|
+    a.source_files = "YapTableView/**/*.{h,m}"
+    a.dependency "YapDatabase"
+  end
 
 end
