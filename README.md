@@ -96,7 +96,7 @@ That's also an example of a view using [YOLayout](https://github.com/YOLayout/YO
 He is an example with different cell classes for different sections.
 
 ```objc
-tableView = [[GHUITableView alloc] init];
+GHUITableView *tableView = [[GHUITableView alloc] init];
 
 // These are the cells that will be used.
 [tableView registerClasses:@[GHUISwitchCell.class, GHUITextImageCell.class]];
@@ -124,7 +124,7 @@ tableView.dataSource.cellSetBlock = ^(GHUITableViewCell *cell, NSDictionary *dic
 Sometimes it's useful to use table views even when you have static content. You can add a UIView to the data source instead of data. This bypasses the cell rendering pattern so it's not appropriate for when you have tons of content.
 
 ```objc
-tableView = [[GHUITableView alloc] init];
+GHUITableView *tableView = [[GHUITableView alloc] init];
 
 // You can add a view as a data object source.
 // In this scenario you are not re-using views and is appropriate for when you have static content.
