@@ -27,7 +27,7 @@
   _tableView = [[GHUITableView alloc] init];
   [self addSubview:_tableView];
 
-  // These are all the cells that will be used
+  // These are all the cells that will be used, usually it's just one.
   [_tableView registerClasses:@[GHUITextImageCell.class]];
 
   // This block returns the cell class.
@@ -36,19 +36,21 @@
     return GHUITextImageCell.class;
   };
 
-  // Set the data on the cell
+  // Set the data on the cell.
   _tableView.dataSource.cellSetBlock = ^(GHUITextImageCell *cell, NSDictionary *dict, NSIndexPath *indexPath, UITableView *tableView, BOOL dequeued) {
     [cell.viewForContent setName:dict[@"name"] description:dict[@"description"] image:[UIImage imageNamed:dict[@"imageName"]]];
   };
+  
+  // Set what happens when a user selects a cell.
   _tableView.dataSource.selectBlock = ^(UITableView *tableView, NSIndexPath *indexPath, NSString *object) {
-    NSLog(@"Selected: %@", indexPath);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSLog(@"Selected: %@", indexPath);
+    // Do something
   };
 
   // Headers
   [_tableView.dataSource setHeaderText:@"Section 1" section:0];
   [_tableView.dataSource setHeaderText:@"Section 2" section:1];
-  [_tableView.dataSource setHeaderText:@"Section 3 (Switch)" section:2];
 
   // Set header view
   _tableView.dataSource.headerViewBlock = ^(UITableView *tableView, NSInteger section, NSString *text) {
@@ -74,7 +76,7 @@
        @"imageName": @"Preview2"},
      @{@"name": @"YOLO irony beard",
        @"description": @"Raw denim Tumblr roof party beard gentrify pickled, art party ethical",
-       @"imageName": @"http://placehold.it/350x150"}
+       @"imageName": @"Preview2"}
      ] section:1 animated:NO];
 }
 
