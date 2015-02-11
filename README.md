@@ -15,7 +15,7 @@ pod "GHUITable/Yap" # Optional, for YapDatabase support
 
 # Example Project
 
-The best way to follow and learn about `GHUITable` is by seeing it in action. Open the example project: [Example](https://github.com/gabriel/GHUITable/tree/master/Example). 
+The best way to follow and learn about `GHUITable` is by seeing it in action. Clone the repo and open the [Example](https://github.com/gabriel/GHUITable/tree/master/Example) project.
 
 # Usage
 
