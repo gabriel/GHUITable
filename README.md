@@ -1,9 +1,9 @@
 GHUITable
 =========
 
-Making UITableView, UICollectionView, UITableViewCell more sane. 
+Making UITableView, UICollectionView, UITableViewCell easier to use.
 
-Also includes a UITableView for use with YapDatabase.
+Also includes a UITableView for use with [YapDatabase](https://github.com/yapstudios/YapDatabase).
 
 # Podfile
 
