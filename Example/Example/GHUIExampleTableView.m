@@ -31,7 +31,7 @@
   [_tableView registerClasses:@[GHUITextImageCell.class]];
 
   // This block returns the cell class.
-  // It can be base on the data or section, or (in this case) can be constant.
+  // It can be based on the data or section, or (in this case) can be constant.
   _tableView.dataSource.classBlock = ^Class(id object, NSIndexPath *indexPath) {
     return GHUITextImageCell.class;
   };

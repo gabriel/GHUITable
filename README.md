@@ -29,7 +29,7 @@ _tableView = [[GHUITableView alloc] init];
 [_tableView registerClasses:@[GHUITextImageCell.class]];
 
 // This block returns the cell class.
-// It can be base on the data or section, or (in this case) can be constant.
+// It can be based on the data or section, or (in this case) can be constant.
 _tableView.dataSource.classBlock = ^Class(id object, NSIndexPath *indexPath) {
   return GHUITextImageCell.class;
 };
@@ -59,13 +59,17 @@ There are many methods for adding, updating or removing data.
 ```objc
 [_tableView setObjects:@[...] animated:NO];
 [_tableView addObjects:@[...] animated:NO];
+// And many more...
 ```
 
-Or access methods on the datasource.
+Or access methods on the datasource. (You can pass nil for indexPaths if you don't care what changed.)
 
 ```objc
 [_tableView.dataSource addObjects:@[..] section:0 indexPaths:nil];
 [_tableView.dataSource removeObjects:@[..] section:0 indexPaths:nil];
+// And many more...
+
+// If you edit the datasource directly be sure to call reloadData
 [_tableView reloadData];
 ```
 
@@ -84,7 +88,7 @@ For example, `GHUITextImageCell` is defined as:
 @end
 ```
 
-That's it.
+That's it. [GHUITextImageView](https://github.com/gabriel/GHUITable/blob/master/Example/Example/GHUITextImageView.m) is a UIView that is wrapped. It's also an example of a view using [YOLayout](https://github.com/YOLayout/YOLayout) which you should also check out!
 
 ## GHUITableView (More complex example)
 
