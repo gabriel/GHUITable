@@ -23,7 +23,8 @@
   _defaultDataSource = [[GHUICollectionViewDataSource alloc] init];
   self.dataSource = _defaultDataSource;
   self.delegate = _defaultDataSource;
-  
+
+  self.alwaysBounceVertical = YES;
   [self setMinimumLineSpacing:1];
 }
 

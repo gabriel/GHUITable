@@ -88,6 +88,8 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+  NSString *text = [self headerTextForSection:section];
+  if (!text) return nil;
   NSAssert(self.headerViewBlock, @"No header view block defined");
   return self.headerViewBlock(tableView, section, [self headerTextForSection:section]);
 }

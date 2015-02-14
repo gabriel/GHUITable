@@ -210,10 +210,16 @@
 }
 
 - (NSIndexPath *)indexPathOfObject:(id)object section:(NSInteger)section {
-  NSUInteger index = [self indexOfObject:object section:section];
+  NSInteger index = [self indexOfObject:object section:section];
   if (index != NSNotFound) {
     return [NSIndexPath indexPathForRow:index inSection:section];
   }
+  return nil;
+}
+
+- (id)findObject:(id)object section:(NSInteger)section {
+  NSIndexPath *indexPath = [self indexPathOfObject:object section:section];
+  if (indexPath) return [self objectAtIndexPath:indexPath];
   return nil;
 }
 

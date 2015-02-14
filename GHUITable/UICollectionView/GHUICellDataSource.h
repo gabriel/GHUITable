@@ -64,4 +64,6 @@
 
 - (void)insertObject:(id)obj indexPath:(NSIndexPath *)indexPath;
 
+- (id)findObject:(id)object section:(NSInteger)section;
+
 @end
