@@ -34,7 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00B544551A8AB2D10044CC5B /* GHTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GHTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B544551A8AB2D10044CC5B /* GHUITable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GHUITable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B544A41A8AB3370044CC5B /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		00B544A51A8AB4AB0044CC5B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		00B544AF1A8AB80F0044CC5B /* GHUITable.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = GHUITable.podspec; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		00B544561A8AB2D10044CC5B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00B544551A8AB2D10044CC5B /* GHTable.framework */,
+				00B544551A8AB2D10044CC5B /* GHUITable.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,9 +197,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		00B544541A8AB2D10044CC5B /* GHTable */ = {
+		00B544541A8AB2D10044CC5B /* GHUITable */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00B5446B1A8AB2D10044CC5B /* Build configuration list for PBXNativeTarget "GHTable" */;
+			buildConfigurationList = 00B5446B1A8AB2D10044CC5B /* Build configuration list for PBXNativeTarget "GHUITable" */;
 			buildPhases = (
 				FD7E4F7D1775DF0009D3AAAF /* Check Pods Manifest.lock */,
 				00B544501A8AB2D10044CC5B /* Sources */,
@@ -212,9 +212,9 @@
 			);
 			dependencies = (
 			);
-			name = GHTable;
+			name = GHUITable;
 			productName = GHUICollectionView;
-			productReference = 00B544551A8AB2D10044CC5B /* GHTable.framework */;
+			productReference = 00B544551A8AB2D10044CC5B /* GHUITable.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -231,7 +231,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 00B5444F1A8AB2D10044CC5B /* Build configuration list for PBXProject "GHTable" */;
+			buildConfigurationList = 00B5444F1A8AB2D10044CC5B /* Build configuration list for PBXProject "GHUITable" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -243,7 +243,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00B544541A8AB2D10044CC5B /* GHTable */,
+				00B544541A8AB2D10044CC5B /* GHUITable */,
 			);
 		};
 /* End PBXProject section */
@@ -408,7 +408,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/GHUITable/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = GHTable;
+				PRODUCT_NAME = GHUITable;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -424,7 +424,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/GHUITable/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = GHTable;
+				PRODUCT_NAME = GHUITable;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -432,7 +432,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00B5444F1A8AB2D10044CC5B /* Build configuration list for PBXProject "GHTable" */ = {
+		00B5444F1A8AB2D10044CC5B /* Build configuration list for PBXProject "GHUITable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00B544691A8AB2D10044CC5B /* Debug */,
@@ -441,7 +441,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00B5446B1A8AB2D10044CC5B /* Build configuration list for PBXNativeTarget "GHTable" */ = {
+		00B5446B1A8AB2D10044CC5B /* Build configuration list for PBXNativeTarget "GHUITable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00B5446C1A8AB2D10044CC5B /* Debug */,
