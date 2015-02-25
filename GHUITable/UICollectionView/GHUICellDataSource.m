@@ -157,12 +157,12 @@
   for (id object in objects) {
     NSInteger index = [objectsForSection indexOfObject:object];
     if (index != NSNotFound) {
-      [objectsForSection removeObjectAtIndex:index];
       NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:section];
       [self invalidate:indexPath];
       if (indexPaths) [*indexPaths addObject:indexPath];
     }
   }
+  [objectsForSection removeObjectsInArray:objects];
 }
 
 - (void)invalidate:(NSIndexPath *)indexPath {
