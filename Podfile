@@ -4,4 +4,4 @@ pod "GHKit"
 pod "ObjectiveSugar"
 
 pod "YapDatabase"
-pod "SDWebImage"
+#pod "SDWebImage"
