@@ -16,15 +16,16 @@ Pod::Spec.new do |s|
   s.author       = { "Gabriel Handford" => "gabrielh@gmail.com" }
   s.source       = { :git => "https://github.com/gabriel/GHUITable.git", :tag => s.version.to_s }
   s.source_files = "GHUITable/**/*.{h,m}"
+  s.platform     = :ios, "7.0"
   s.dependency "GHKit"
   s.dependency "ObjectiveSugar"
   s.requires_arc = true
 
-  s.ios.platform = :ios, "8.0"
-  s.ios.deployment_target = "8.0"
-
   s.subspec "Yap" do |a|
+    a.platform     = :ios, "7.0"
     a.source_files = "GHUITable/**/*.{h,m}", "YapTableView/**/*.{h,m}"
+    a.dependency "GHKit"
+    a.dependency "ObjectiveSugar"
     a.dependency "YapDatabase"
   end
 
