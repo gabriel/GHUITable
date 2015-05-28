@@ -10,5 +10,3 @@ pod "YapDatabase"
 pod "YOLayout"
 pod "SDWebImage"
 
-pod "YOCView", :path => "../../YOCView"
-
