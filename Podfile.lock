@@ -4,17 +4,15 @@ PODS:
   - CocoaLumberjack/Core (1.9.2)
   - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
-  - GHKit (1.0.21)
+  - GHKit (2.0.0)
   - ObjectiveSugar (1.1.0)
-  - SDWebImage (3.7.1):
-    - SDWebImage/Core (= 3.7.1)
-  - SDWebImage/Core (3.7.1)
-  - YapDatabase (2.5.4):
-    - YapDatabase/standard (= 2.5.4)
-  - YapDatabase/common (2.5.4):
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
+  - YapDatabase (2.6.4):
+    - YapDatabase/standard (= 2.6.4)
+  - YapDatabase/standard (2.6.4):
     - CocoaLumberjack (~> 1)
-  - YapDatabase/standard (2.5.4):
-    - YapDatabase/common
 
 DEPENDENCIES:
   - GHKit
@@ -23,10 +21,10 @@ DEPENDENCIES:
   - YapDatabase
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
-  GHKit: b6f2b698849faca1156a6e64d19efa4195147277
-  ObjectiveSugar: f48793f5902c77cfc02a4ce46d2e8ecddcad4dc2
-  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
-  YapDatabase: c1d6912df1b4a160f7373ee7657d360e29bb00fd
+  CocoaLumberjack: 628fca2e88ef06f7cf6817309aa405f325d9a6fa
+  GHKit: 29e5361c9d8a33343ae5ed4698057d1533ee590b
+  ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  YapDatabase: f9051e178a38f48d0f3a78562423a5bc969f1ca3
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.37.2

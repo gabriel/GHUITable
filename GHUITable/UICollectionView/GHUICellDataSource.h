@@ -8,10 +8,7 @@
 
 #import "GHUIBaseCellDataSource.h"
 
-@interface GHUICellDataSource : GHUIBaseCellDataSource <UIScrollViewDelegate> {
-  NSMutableDictionary *_sections;
-  NSInteger _sectionCount;  
-}
+@interface GHUICellDataSource : GHUIBaseCellDataSource <UIScrollViewDelegate>
 
 @property UIEdgeInsets sectionInset;
 @property NSInteger minSectionCount;
@@ -31,16 +28,18 @@
 
 - (void)addObjects:(NSArray *)objects;
 - (void)addObjects:(NSArray *)objects section:(NSInteger)section;
-- (void)addObjects:(NSArray *)objects section:(NSInteger)section indexPaths:(NSMutableArray **)indexPaths;
+- (void)addObjects:(NSArray *)objects section:(NSInteger)section indexPaths:(NSMutableArray *)indexPaths;
 
-- (void)insertObjects:(NSArray *)objects section:(NSInteger)section position:(NSInteger)position indexPaths:(NSMutableArray **)indexPaths;
+- (void)insertObjects:(NSArray *)objects section:(NSInteger)section position:(NSInteger)position indexPaths:(NSMutableArray *)indexPaths;
 
 - (void)replaceObjectAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
 - (NSIndexPath *)replaceObject:(id)object section:(NSInteger)section;
 
-- (void)addOrUpdateObjects:(NSArray *)objects section:(NSInteger)section indexPathsToAdd:(NSMutableArray **)indexPathsToAdd indexPathsToUpdate:(NSMutableArray **)indexPathsToUpdate;
+- (void)addOrUpdateObjects:(NSArray *)objects section:(NSInteger)section indexPathsToAdd:(NSMutableArray *)indexPathsToAdd indexPathsToUpdate:(NSMutableArray *)indexPathsToUpdate;
 
-- (void)updateObjects:(NSArray *)objects section:(NSInteger)section position:(NSInteger)position indexPathsToAdd:(NSMutableArray **)indexPathsToAdd indexPathsToUpdate:(NSMutableArray **)indexPathsToUpdate indexPathsToRemove:(NSMutableArray **)indexPathsToRemove;
+- (void)updateObjects:(NSArray *)objects section:(NSInteger)section indexPathsToAdd:(NSMutableArray *)indexPathsToAdd indexPathsToUpdate:(NSMutableArray *)indexPathsToUpdate indexPathsToRemove:(NSMutableArray *)indexPathsToRemove;
+
+- (void)updateObjects:(NSArray *)objects section:(NSInteger)section position:(NSInteger)position indexPathsToAdd:(NSMutableArray *)indexPathsToAdd indexPathsToUpdate:(NSMutableArray *)indexPathsToUpdate indexPathsToRemove:(NSMutableArray *)indexPathsToRemove;
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath;
 - (id)lastObjectInSection:(NSInteger)section;
@@ -51,16 +50,16 @@
 
 - (void)removeObjectAtIndexPath:(NSIndexPath *)indexPath;
 - (void)removeObjects:(NSArray *)objects;
-- (void)removeObjects:(NSArray *)objects section:(NSInteger)section indexPaths:(NSMutableArray **)indexPaths;
+- (void)removeObjects:(NSArray *)objects section:(NSInteger)section indexPaths:(NSMutableArray *)indexPaths;
 - (void)removeAllObjects;
-- (void)removeObjectsFromSection:(NSInteger)section indexPaths:(NSMutableArray **)indexPaths;
+- (void)removeObjectsFromSection:(NSInteger)section indexPaths:(NSMutableArray *)indexPaths;
 
-- (void)replaceObjects:(NSArray *)replaceObjects withObjects:(NSArray *)objects section:(NSInteger)section indexPathsToAdd:(NSMutableArray **)indexPathsToAdd indexPathsToUpdate:(NSMutableArray **)indexPathsToUpdate;
-- (void)replaceObjects:(NSArray *)replaceObjects section:(NSInteger)section indexPaths:(NSMutableArray **)indexPaths;
+- (void)replaceObjects:(NSArray *)replaceObjects withObjects:(NSArray *)objects section:(NSInteger)section indexPathsToAdd:(NSMutableArray *)indexPathsToAdd indexPathsToUpdate:(NSMutableArray *)indexPathsToUpdate;
+- (void)replaceObjects:(NSArray *)replaceObjects section:(NSInteger)section indexPaths:(NSMutableArray *)indexPaths;
 
 - (void)setObjects:(NSArray *)objects;
 - (void)setObjects:(NSArray *)objects section:(NSInteger)section;
-- (void)setObjects:(NSArray *)objects section:(NSInteger)section indexPathsToRemove:(NSMutableArray **)indexPathsToRemove indexPathsToAdd:(NSMutableArray **)indexPathsToAdd;
+- (void)setObjects:(NSArray *)objects section:(NSInteger)section indexPathsToRemove:(NSMutableArray *)indexPathsToRemove indexPathsToAdd:(NSMutableArray *)indexPathsToAdd;
 
 - (void)insertObject:(id)obj indexPath:(NSIndexPath *)indexPath;
 

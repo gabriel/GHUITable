@@ -19,6 +19,8 @@
 
 @implementation GHUICollectionView
 
+@dynamic dataSource;
+
 - (void)sharedInit {
   _defaultDataSource = [[GHUICollectionViewDataSource alloc] init];
   self.dataSource = _defaultDataSource;
@@ -63,7 +65,7 @@
   __typeof__(self) __weak blockSelf = self;
   [self performBatchUpdates:^(){
     NSMutableArray *indexPaths = [NSMutableArray array];
-    [blockSelf.dataSource removeObjects:objects section:section indexPaths:&indexPaths];
+    [blockSelf.dataSource removeObjects:objects section:section indexPaths:indexPaths];
     [blockSelf deleteItemsAtIndexPaths:indexPaths];
   } completion:completion];
 }
@@ -72,7 +74,7 @@
   __typeof__(self) __weak blockSelf = self;
   [self performBatchUpdates:^(){
     NSMutableArray *indexPaths = [NSMutableArray array];
-    [blockSelf.dataSource removeObjects:objects section:section indexPaths:&indexPaths];
+    [blockSelf.dataSource removeObjects:objects section:section indexPaths:indexPaths];
     [blockSelf deleteItemsAtIndexPaths:indexPaths];
   } completion:completion];
 }

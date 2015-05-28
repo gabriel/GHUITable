@@ -16,6 +16,8 @@
 
 @implementation GHUITableView
 
+@dynamic dataSource;
+
 - (void)sharedInit {
   [self resetDataSource];
   
@@ -58,9 +60,9 @@
 - (void)setObjects:(NSArray *)objects section:(NSInteger)section animated:(BOOL)animated {
   NSMutableArray *indexPathsToRemove = [NSMutableArray array];
   NSMutableArray *indexPathsToAdd = [NSMutableArray array];
-  if (animated) [self beginUpdates];
-  [self.dataSource setObjects:objects section:section indexPathsToRemove:&indexPathsToRemove indexPathsToAdd:&indexPathsToAdd];
+  [self.dataSource setObjects:objects section:section indexPathsToRemove:indexPathsToRemove indexPathsToAdd:indexPathsToAdd];
   if (animated) {
+    [self beginUpdates];
     [self deleteRowsAtIndexPaths:indexPathsToRemove withRowAnimation:UITableViewRowAnimationAutomatic];
     [self insertRowsAtIndexPaths:indexPathsToAdd withRowAnimation:UITableViewRowAnimationAutomatic];
     [self endUpdates];
@@ -73,7 +75,7 @@
   if (position < 0) position = 0;
   NSMutableArray *indexPaths = [NSMutableArray array];
   if (animated) [self beginUpdates];
-  [self.dataSource insertObjects:objects section:section position:position indexPaths:&indexPaths];
+  [self.dataSource insertObjects:objects section:section position:position indexPaths:indexPaths];
   if (animated) {
     [self insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     [self endUpdates];
@@ -85,7 +87,7 @@
 - (void)addObjects:(NSArray *)objects section:(NSInteger)section animated:(BOOL)animated {
   NSMutableArray *indexPaths = [NSMutableArray array];
   if (animated) [self beginUpdates];
-  [self.dataSource addObjects:objects section:section indexPaths:&indexPaths];
+  [self.dataSource addObjects:objects section:section indexPaths:indexPaths];
   if (animated) {
     [self insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     [self endUpdates];
@@ -98,7 +100,7 @@
   NSMutableArray *indexPathsToAdd = [NSMutableArray array];
   NSMutableArray *indexPathsToUpdate = [NSMutableArray array];
   if (animated) [self beginUpdates];
-  [self.dataSource addOrUpdateObjects:objects section:section indexPathsToAdd:&indexPathsToAdd indexPathsToUpdate:&indexPathsToUpdate];
+  [self.dataSource addOrUpdateObjects:objects section:section indexPathsToAdd:indexPathsToAdd indexPathsToUpdate:indexPathsToUpdate];
   if (animated) {
     if ([indexPathsToUpdate count] > 0) [self reloadRowsAtIndexPaths:indexPathsToUpdate withRowAnimation:(animated ? UITableViewRowAnimationAutomatic : UITableViewRowAnimationNone)];
     if ([indexPathsToAdd count] > 0) [self insertRowsAtIndexPaths:indexPathsToAdd withRowAnimation:(animated ? UITableViewRowAnimationAutomatic : UITableViewRowAnimationNone)];
@@ -112,7 +114,7 @@
   NSMutableArray *indexPathsToAdd = [NSMutableArray array];
   NSMutableArray *indexPathsToUpdate = [NSMutableArray array];
   if (animated) [self beginUpdates];
-  [self.dataSource replaceObjects:replaceObjects withObjects:objects section:section indexPathsToAdd:&indexPathsToAdd indexPathsToUpdate:&indexPathsToUpdate];
+  [self.dataSource replaceObjects:replaceObjects withObjects:objects section:section indexPathsToAdd:indexPathsToAdd indexPathsToUpdate:indexPathsToUpdate];
   if (animated) {
     if ([indexPathsToUpdate count] > 0) [self reloadRowsAtIndexPaths:indexPathsToUpdate withRowAnimation:(animated ? UITableViewRowAnimationAutomatic : UITableViewRowAnimationNone)];
     if ([indexPathsToAdd count] > 0) [self insertRowsAtIndexPaths:indexPathsToAdd withRowAnimation:(animated ? UITableViewRowAnimationAutomatic : UITableViewRowAnimationNone)];
@@ -151,7 +153,7 @@
 - (void)removeObjects:(NSArray *)objects section:(NSInteger)section animated:(BOOL)animated {
   NSMutableArray *indexPaths = [NSMutableArray array];
   if (animated) [self beginUpdates];
-  [self.dataSource removeObjects:objects section:section indexPaths:&indexPaths];
+  [self.dataSource removeObjects:objects section:section indexPaths:indexPaths];
   if (animated) {
     [self deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     [self endUpdates];

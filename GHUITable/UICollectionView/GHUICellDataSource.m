@@ -10,6 +10,11 @@
 
 #import <ObjectiveSugar/ObjectiveSugar.h>
 
+@interface GHUICellDataSource ()
+@property NSMutableDictionary *sections;
+@property (nonatomic) NSInteger sectionCount;
+@end
+
 @implementation GHUICellDataSource
 
 - (NSMutableArray *)objectsForSection:(NSInteger)section create:(BOOL)create {
@@ -47,41 +52,42 @@
   [self addObjects:objects section:section indexPaths:nil];
 }
 
-- (void)addObjects:(NSArray *)objects section:(NSInteger)section indexPaths:(NSMutableArray **)indexPaths {
+- (void)addObjects:(NSArray *)objects section:(NSInteger)section indexPaths:(NSMutableArray *)indexPaths {
   NSMutableArray *objectsForSection = [self objectsForSection:section create:YES];
   NSInteger previousCount = [objectsForSection count];
   [objectsForSection addObjectsFromArray:objects];
 
   for(NSInteger i = 0, count = [objects count]; i < count; i++) {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(i + previousCount) inSection:section];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:(i + previousCount) inSection:section];
     [self invalidate:indexPath];
-    if (indexPaths) [*indexPaths addObject:indexPath];
+    [indexPaths addObject:indexPath];
   }
 }
 
 - (void)insertObject:(id)obj indexPath:(NSIndexPath *)indexPath {
   NSMutableArray *objectsForSection = [self objectsForSection:indexPath.section create:YES];
-  [objectsForSection insertObject:obj atIndex:indexPath.row];
+  [objectsForSection insertObject:obj atIndex:indexPath.item];
 }
 
-- (void)insertObjects:(NSArray *)objects section:(NSInteger)section position:(NSInteger)position indexPaths:(NSMutableArray **)indexPaths {
+- (void)insertObjects:(NSArray *)objects section:(NSInteger)section position:(NSInteger)position indexPaths:(NSMutableArray *)indexPaths {
   NSMutableArray *objectsForSection = [self objectsForSection:section create:YES];
+  if (position > [objectsForSection count]) position = [objectsForSection count];
   
   for (NSInteger i = 0; i < [objects count]; i++) {
     [objectsForSection insertObject:objects[i] atIndex:position + i];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:position + i inSection:section];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:position + i inSection:section];
     [self invalidate:indexPath];
-    if (indexPaths) [*indexPaths addObject:indexPath];
+    [indexPaths addObject:indexPath];
   }
 }
 
-- (void)addOrUpdateObjects:(NSArray *)objects section:(NSInteger)section indexPathsToAdd:(NSMutableArray **)indexPathsToAdd indexPathsToUpdate:(NSMutableArray **)indexPathsToUpdate {
+- (void)addOrUpdateObjects:(NSArray *)objects section:(NSInteger)section indexPathsToAdd:(NSMutableArray *)indexPathsToAdd indexPathsToUpdate:(NSMutableArray *)indexPathsToUpdate {
   NSMutableArray *objectsToAdd = [NSMutableArray array];
   for (id object in objects) {
     NSIndexPath *indexPath = [self indexPathOfObject:object section:section];
     if (indexPath) {
       [self replaceObjectAtIndexPath:indexPath withObject:object];
-      if (indexPathsToUpdate) [*indexPathsToUpdate addObject:indexPath];
+      if (indexPathsToUpdate) [indexPathsToUpdate addObject:indexPath];
     } else {
       [objectsToAdd addObject:object];
     }
@@ -89,7 +95,20 @@
   [self addObjects:objectsToAdd section:section indexPaths:indexPathsToAdd];
 }
 
-- (void)updateObjects:(NSArray *)objects section:(NSInteger)section position:(NSInteger)position indexPathsToAdd:(NSMutableArray **)indexPathsToAdd indexPathsToUpdate:(NSMutableArray **)indexPathsToUpdate indexPathsToRemove:(NSMutableArray **)indexPathsToRemove {
+- (void)updateObjects:(NSArray *)objects section:(NSInteger)section indexPathsToAdd:(NSMutableArray *)indexPathsToAdd indexPathsToUpdate:(NSMutableArray *)indexPathsToUpdate indexPathsToRemove:(NSMutableArray *)indexPathsToRemove {
+  NSArray *addObjects = [objects relativeComplement:[self objectsForSection:section]];
+  NSArray *updateObjects = [[self objectsForSection:section] intersectionWithArray:objects];
+  NSArray *removeObjects = [[self objectsForSection:section] relativeComplement:objects];
+
+  for (id object in addObjects) {
+    NSInteger position = [objects indexOfObjectIdenticalTo:object];
+    [self insertObjects:@[object] section:section position:position indexPaths:indexPathsToAdd];
+  }
+  [self replaceObjects:updateObjects section:section indexPaths:indexPathsToUpdate];
+  [self removeObjects:removeObjects section:section indexPaths:indexPathsToRemove];
+}
+
+- (void)updateObjects:(NSArray *)objects section:(NSInteger)section position:(NSInteger)position indexPathsToAdd:(NSMutableArray *)indexPathsToAdd indexPathsToUpdate:(NSMutableArray *)indexPathsToUpdate indexPathsToRemove:(NSMutableArray *)indexPathsToRemove {
   
   NSArray *addObjects = [objects relativeComplement:[self objectsForSection:section]];
   NSArray *updateObjects = [[self objectsForSection:section] intersectionWithArray:objects];
@@ -100,16 +119,16 @@
   [self removeObjects:removeObjects section:section indexPaths:indexPathsToRemove];
 }
 
-- (void)replaceObjects:(NSArray *)objects section:(NSInteger)section indexPaths:(NSMutableArray **)indexPaths {
+- (void)replaceObjects:(NSArray *)objects section:(NSInteger)section indexPaths:(NSMutableArray *)indexPaths {
   for (id object in objects) {
     NSIndexPath *indexPath = [self indexPathOfObject:object section:section];
     NSAssert(indexPath, @"Object doesn't exist, can't replace it");
     [self replaceObjectAtIndexPath:indexPath withObject:object];
-    if (indexPaths) [*indexPaths addObject:indexPath];
+    [indexPaths addObject:indexPath];
   }
 }
 
-- (void)replaceObjects:(NSArray *)replaceObjects withObjects:(NSArray *)objects section:(NSInteger)section indexPathsToAdd:(NSMutableArray **)indexPathsToAdd indexPathsToUpdate:(NSMutableArray **)indexPathsToUpdate {
+- (void)replaceObjects:(NSArray *)replaceObjects withObjects:(NSArray *)objects section:(NSInteger)section indexPathsToAdd:(NSMutableArray *)indexPathsToAdd indexPathsToUpdate:(NSMutableArray *)indexPathsToUpdate {
   
   NSAssert([replaceObjects count] == [objects count], @"Objects length mismatch");
   
@@ -119,7 +138,7 @@
     NSIndexPath *indexPath = [self indexPathOfObject:replaceObject section:section];
     if (indexPath) {
       [self replaceObjectAtIndexPath:indexPath withObject:object];
-      if (indexPathsToUpdate) [*indexPathsToUpdate addObject:indexPath];
+      if (indexPathsToUpdate) [indexPathsToUpdate addObject:indexPath];
     } else {
       [self addObjects:@[object] section:section indexPaths:indexPathsToAdd];
     }
@@ -128,14 +147,14 @@
 
 - (void)replaceObjectAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
   NSMutableArray *objectsForSection = [self objectsForSection:indexPath.section create:YES];
-  [objectsForSection replaceObjectAtIndex:indexPath.row withObject:object];
+  [objectsForSection replaceObjectAtIndex:indexPath.item withObject:object];
   [self invalidate:indexPath];
 }
 
-- (void)removeObjectsFromSection:(NSInteger)section indexPaths:(NSMutableArray **)indexPaths {
+- (void)removeObjectsFromSection:(NSInteger)section indexPaths:(NSMutableArray *)indexPaths {
   NSMutableArray *objectsForSection = [self objectsForSection:section create:NO];
   if (indexPaths) {
-    for (NSInteger i = 0; i < [objectsForSection count]; i++) [*indexPaths addObject:[NSIndexPath indexPathForItem:i inSection:section]];
+    for (NSInteger i = 0; i < [objectsForSection count]; i++) [indexPaths addObject:[NSIndexPath indexPathForItem:i inSection:section]];
   }
   [objectsForSection removeAllObjects];
   [self invalidateAll];
@@ -147,19 +166,19 @@
 
 - (void)removeObjectAtIndexPath:(NSIndexPath *)indexPath {
   NSMutableArray *objectsForSection = [self objectsForSection:indexPath.section create:NO];
-  [objectsForSection removeObjectAtIndex:indexPath.row];
+  [objectsForSection removeObjectAtIndex:indexPath.item];
   [self invalidate:indexPath];
 }
 
-- (void)removeObjects:(NSArray *)objects section:(NSInteger)section indexPaths:(NSMutableArray **)indexPaths {
+- (void)removeObjects:(NSArray *)objects section:(NSInteger)section indexPaths:(NSMutableArray *)indexPaths {
   NSMutableArray *objectsForSection = [self objectsForSection:section create:NO];
   if (!objectsForSection) return;
   for (id object in objects) {
     NSInteger index = [objectsForSection indexOfObject:object];
     if (index != NSNotFound) {
-      NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:section];
+      NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:section];
       [self invalidate:indexPath];
-      if (indexPaths) [*indexPaths addObject:indexPath];
+      [indexPaths addObject:indexPath];
     }
   }
   [objectsForSection removeObjectsInArray:objects];
@@ -186,7 +205,7 @@
   [self setObjects:objects section:section indexPathsToRemove:nil indexPathsToAdd:nil];
 }
 
-- (void)setObjects:(NSArray *)objects section:(NSInteger)section indexPathsToRemove:(NSMutableArray **)indexPathsToRemove indexPathsToAdd:(NSMutableArray **)indexPathsToAdd {
+- (void)setObjects:(NSArray *)objects section:(NSInteger)section indexPathsToRemove:(NSMutableArray *)indexPathsToRemove indexPathsToAdd:(NSMutableArray *)indexPathsToAdd {
   [self removeObjectsFromSection:section indexPaths:indexPathsToRemove];
   [self addObjects:objects section:section indexPaths:indexPathsToAdd];
   [self invalidateAll];
@@ -194,7 +213,7 @@
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath {
   NSArray *objects = [self objectsForSection:indexPath.section];
-  return [objects objectAtIndex:indexPath.row];
+  return [objects objectAtIndex:indexPath.item];
 }
 
 - (id)lastObjectInSection:(NSInteger)section {
@@ -212,7 +231,7 @@
 - (NSIndexPath *)indexPathOfObject:(id)object section:(NSInteger)section {
   NSInteger index = [self indexOfObject:object section:section];
   if (index != NSNotFound) {
-    return [NSIndexPath indexPathForRow:index inSection:section];
+    return [NSIndexPath indexPathForItem:index inSection:section];
   }
   return nil;
 }

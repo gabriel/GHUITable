@@ -31,11 +31,14 @@
   YapDatabaseViewSortingBlock sortingBlock = ^(NSString *group, NSString *collection1, NSString *key1, id obj1, NSString *collection2, NSString *key2, id obj2) {
     return NSOrderedSame;
   };
+
+  YapDatabaseViewGrouping *grouping = [YapDatabaseViewGrouping withObjectBlock:groupingBlock];
+  YapDatabaseViewSorting *sorting = [YapDatabaseViewSorting withObjectBlock:sortingBlock];
   
-  [self setDatabase:database collection:collection groupingBlock:groupingBlock groupFilterBlock:nil groupSortBlock:nil sortingBlock:sortingBlock completion:completion];
+  [self setDatabase:database collection:collection grouping:grouping groupFilterBlock:nil groupSortBlock:nil sorting:sorting completion:completion];
 }
 
-- (void)setDatabase:(YapDatabase *)database collection:(NSString *)collection groupingBlock:(YapDatabaseViewGroupingBlock)groupingBlock groupFilterBlock:(YapDatabaseViewMappingGroupFilter)groupFilterBlock groupSortBlock:(YapDatabaseViewMappingGroupSort)groupSortBlock sortingBlock:(YapDatabaseViewSortingBlock)sortingBlock completion:(void (^)(GHUIYapTableView *tableView, GHUIYapTableViewDataSource *dataSource))completion {
+- (void)setDatabase:(YapDatabase *)database collection:(NSString *)collection grouping:(YapDatabaseViewGrouping *)grouping groupFilterBlock:(YapDatabaseViewMappingGroupFilter)groupFilterBlock groupSortBlock:(YapDatabaseViewMappingGroupSort)groupSortBlock sorting:(YapDatabaseViewSorting *)sorting completion:(void (^)(GHUIYapTableView *tableView, GHUIYapTableViewDataSource *dataSource))completion {
   _database = database;
   _extension = collection;
   
@@ -51,8 +54,8 @@
   if (!groupSortBlock) groupSortBlock = ^NSComparisonResult(NSString *group1, NSString *group2, YapDatabaseReadTransaction *transaction) {
     return [group1 localizedCompare:group2];
   };
-  
-  YapDatabaseView *dbView = [[YapDatabaseView alloc] initWithGroupingBlock:groupingBlock groupingBlockType:YapDatabaseViewBlockTypeWithObject sortingBlock:sortingBlock sortingBlockType:YapDatabaseViewBlockTypeWithObject versionTag:nil options:options];
+
+  YapDatabaseView *dbView = [[YapDatabaseView alloc] initWithGrouping:grouping sorting:sorting versionTag:nil options:options];
   
   __weak GHUIYapTableView *blockSelf = self;
   [database asyncRegisterExtension:dbView withName:_extension completionBlock:^(BOOL ready) {

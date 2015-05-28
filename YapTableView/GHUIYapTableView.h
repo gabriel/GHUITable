@@ -26,7 +26,7 @@
 @property (readonly) YapDatabaseViewMappings *mappings;
 @property (weak) id<GHUIYapTableViewDelegate> yapDelegate;
 
-- (void)setDatabase:(YapDatabase *)database collection:(NSString *)collection groupingBlock:(YapDatabaseViewGroupingBlock)groupingBlock groupFilterBlock:(YapDatabaseViewMappingGroupFilter)groupFilterBlock groupSortBlock:(YapDatabaseViewMappingGroupSort)groupSortBlock sortingBlock:(YapDatabaseViewSortingBlock)sortingBlock completion:(void (^)(GHUIYapTableView *tableView, GHUIYapTableViewDataSource *dataSource))completion;
+- (void)setDatabase:(YapDatabase *)database collection:(NSString *)collection grouping:(YapDatabaseViewGrouping *)grouping groupFilterBlock:(YapDatabaseViewMappingGroupFilter)groupFilterBlock groupSortBlock:(YapDatabaseViewMappingGroupSort)groupSortBlock sorting:(YapDatabaseViewSorting *)sorting completion:(void (^)(GHUIYapTableView *tableView, GHUIYapTableViewDataSource *dataSource))completion;
 
 - (void)setDatabase:(YapDatabase *)database collection:(NSString *)collection completion:(void (^)(GHUIYapTableView *tableView, GHUIYapTableViewDataSource *dataSource))completion;
 
