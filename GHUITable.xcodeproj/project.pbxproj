@@ -30,6 +30,7 @@
 		00E64C281A8AE20900CACF44 /* GHUIYapTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E64C241A8AE20900CACF44 /* GHUIYapTableView.m */; };
 		00E64C291A8AE20900CACF44 /* GHUIYapTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E64C251A8AE20900CACF44 /* GHUIYapTableViewDataSource.h */; };
 		00E64C2A1A8AE20900CACF44 /* GHUIYapTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E64C261A8AE20900CACF44 /* GHUIYapTableViewDataSource.m */; };
+		5AB51119C30B61F685A6B4C5 /* libPods-GHUITable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FF58FF18B3365890CD8E2A /* libPods-GHUITable.a */; };
 		CDBB536CB90441CB7E4AAD23 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B230DA838E9693C80B7F14A1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -62,9 +63,10 @@
 		00E64C241A8AE20900CACF44 /* GHUIYapTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIYapTableView.m; sourceTree = "<group>"; };
 		00E64C251A8AE20900CACF44 /* GHUIYapTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIYapTableViewDataSource.h; sourceTree = "<group>"; };
 		00E64C261A8AE20900CACF44 /* GHUIYapTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIYapTableViewDataSource.m; sourceTree = "<group>"; };
-		54BB3AC5DCC333001393B155 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		A8A8A8359064773496E76972 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2F6CB9D7F2DDF37AA55AD859 /* Pods-GHUITable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHUITable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GHUITable/Pods-GHUITable.debug.xcconfig"; sourceTree = "<group>"; };
+		83FF58FF18B3365890CD8E2A /* libPods-GHUITable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GHUITable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B230DA838E9693C80B7F14A1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1B12545DECC3DB78714C58 /* Pods-GHUITable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHUITable.release.xcconfig"; path = "Pods/Target Support Files/Pods-GHUITable/Pods-GHUITable.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDBB536CB90441CB7E4AAD23 /* libPods.a in Frameworks */,
+				5AB51119C30B61F685A6B4C5 /* libPods-GHUITable.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				B230DA838E9693C80B7F14A1 /* libPods.a */,
+				83FF58FF18B3365890CD8E2A /* libPods-GHUITable.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,8 +170,8 @@
 		1AF86D045F2E3BFFA949A546 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A8A8A8359064773496E76972 /* Pods.debug.xcconfig */,
-				54BB3AC5DCC333001393B155 /* Pods.release.xcconfig */,
+				2F6CB9D7F2DDF37AA55AD859 /* Pods-GHUITable.debug.xcconfig */,
+				CD1B12545DECC3DB78714C58 /* Pods-GHUITable.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -271,7 +275,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GHUITable/Pods-GHUITable-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD7E4F7D1775DF0009D3AAAF /* Check Pods Manifest.lock */ = {
@@ -399,7 +403,7 @@
 		};
 		00B5446C1A8AB2D10044CC5B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8A8A8359064773496E76972 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 2F6CB9D7F2DDF37AA55AD859 /* Pods-GHUITable.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -414,7 +418,7 @@
 		};
 		00B5446D1A8AB2D10044CC5B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54BB3AC5DCC333001393B155 /* Pods.release.xcconfig */;
+			baseConfigurationReference = CD1B12545DECC3DB78714C58 /* Pods-GHUITable.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
