@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00A1B90B1B5722EC003B77A2 /* GHUITable.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B544B11A8AB8160044CC5B /* GHUITable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00BA9F481B17B6D00072167B /* GHUIBaseCellDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B544B41A8AB8160044CC5B /* GHUIBaseCellDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00BA9F491B17B6D00072167B /* GHUIBaseCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B544B51A8AB8160044CC5B /* GHUIBaseCellDataSource.m */; };
 		00BA9F4A1B17B6D00072167B /* GHUICellDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B544B61A8AB8160044CC5B /* GHUICellDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -176,6 +177,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A1B90B1B5722EC003B77A2 /* GHUITable.h in Headers */,
 				00BA9F4A1B17B6D00072167B /* GHUICellDataSource.h in Headers */,
 				00BA9F521B17B6D30072167B /* GHUITableView.h in Headers */,
 				00BA9F561B17B6D30072167B /* GHUITableViewDataSource.h in Headers */,
