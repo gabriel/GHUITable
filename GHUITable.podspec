@@ -9,8 +9,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "GHUITable"
-  s.version      = "0.1.8"
-  s.summary      = "UI framework."
+  s.version      = "0.1.9"
+  s.summary      = "Table UI framework."
   s.homepage     = "https://github.com/gabriel/GHUITable"
   s.license      = "MIT"
   s.author       = { "Gabriel Handford" => "gabrielh@gmail.com" }
