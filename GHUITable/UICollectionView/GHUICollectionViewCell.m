@@ -14,7 +14,7 @@
 
 @implementation GHUICollectionViewCell
 
-- (void)sharedInit {
+- (void)viewInit {
   UIView *backgroundView = [[UIView alloc] initWithFrame:self.bounds];
   backgroundView.backgroundColor = [UIColor whiteColor];
   self.backgroundView = backgroundView;
@@ -26,14 +26,14 @@
 
 - (id)initWithFrame:(CGRect)frame {
   if ((self = [super initWithFrame:frame])) {
-    [self sharedInit];
+    [self viewInit];
   }
   return self;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
   if ((self = [super initWithCoder:aDecoder])) {
-    [self sharedInit];
+    [self viewInit];
   }
   return self;
 }

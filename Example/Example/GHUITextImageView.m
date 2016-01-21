@@ -51,7 +51,7 @@
 
     if (y < minY) y = minY;
 
-    return CGSizeMake(size.width, y + 20);
+    return CGSizeMake(size.width, y);
   }];
 }
 

@@ -8,14 +8,14 @@
 
 #import "GHUICellDataSource.h"
 
+typedef void (^GHUICellCollectionHeaderViewBlock)(UICollectionView *collectionView, UICollectionReusableView *view, NSInteger section);
+
 @interface GHUICollectionViewDataSource : GHUICellDataSource <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (copy) GHUICellCollectionHeaderViewBlock headerViewBlock;
 
 - (void)registerCellClass:(Class)cellClass collectionView:(UICollectionView *)collectionView;
 - (void)setCellClass:(Class)cellClass collectionView:(UICollectionView *)collectionView;
 - (void)setCellClass:(Class)cellClass collectionView:(UICollectionView *)collectionView section:(NSInteger)section;
-
-#pragma mark Headers
-
-- (void)setHeaderText:(NSString *)headerText collectionView:(UICollectionView *)collectionView section:(NSInteger)section;
 
 @end

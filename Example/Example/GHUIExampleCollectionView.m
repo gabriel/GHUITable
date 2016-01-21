@@ -9,6 +9,7 @@
 #import "GHUIExampleCollectionView.h"
 
 #import "GHUITextImageView.h"
+#import "GHUICollectionHeaderLabelView.h"
 
 @interface GHUIExampleCollectionView ()
 @property GHUICollectionView *view;
@@ -49,7 +50,22 @@
     // Do something
   };
 
+  // Set header view
+  [_view registerClass:GHUICollectionHeaderLabelView.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];
+  _view.dataSource.headerViewBlock = ^(UICollectionView *collectionView, UICollectionReusableView *view, NSInteger section) {
+    view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
+    UILabel *label = ((GHUICollectionHeaderLabelView *)view).label;
+    label.textColor = [UIColor colorWithRed:255.0f/255.0f green:125.0f/255.0f blue:0.0f/255.0f alpha:1.0];
+    label.font = [UIFont systemFontOfSize:18];
+    label.text = [NSString stringWithFormat:@"Section %@", @(section)];
+  };
+
   // The data
+  [_view setObjects:
+   @[
+     @{@"name": @"Name1", @"description": @"This is a description #1", @"imageName": @"Preview2"},
+     @{@"name": @"Name2", @"description": @"This is a description #2", @"imageName": @"Preview2-Filled"}] section:0];
+
   [_view setObjects:
    @[
      @{@"name": @"Gastropub swag pork belly, butcher selvage mustache chambray scenester pour-over.",
@@ -58,7 +74,7 @@
      @{@"name": @"YOLO irony beard",
        @"description": @"Raw denim Tumblr roof party beard gentrify pickled, art party ethical",
        @"imageName": @"Preview2"}
-     ] section:0];
+     ] section:1];
 }
 
 - (void)layoutSubviews {

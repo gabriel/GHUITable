@@ -27,15 +27,6 @@
   [collectionView registerClass:cellClass forCellWithReuseIdentifier:NSStringFromClass(cellClass)];
 }
 
-- (void)setHeaderText:(NSString *)headerText collectionView:(UICollectionView *)collectionView section:(NSInteger)section {
-  if (!_headerTexts) {
-    _headerTexts = [NSMutableDictionary dictionary];
-    // TODO: Fix header
-    [collectionView registerClass:UILabel.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];
-  }
-  [_headerTexts setObject:headerText forKey:@(section)];
-}
-
 #pragma mark UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -63,17 +54,17 @@
   return sectionCount;
 }
 
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-//  GHUICollectionViewLabel *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
-//  NSString *text = [self headerTextForSection:indexPath.section];
-//  view.label.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.75];
-//  view.label.textColor = [UIColor colorWithRed:255.0f/255.0f green:125.0f/255.0f blue:0.0f/255.0f alpha:1.0];
-//  view.label.font = [UIFont systemFontOfSize:18];
-//  view.label.insets = UIEdgeInsetsMake(0, 10, 0, 10);
-//  [view.label setBorderStyle:GHUIBorderStyleTopBottom color:[UIColor colorWithWhite:230.0f/255.0f alpha:1.0] width:1.0 cornerRadius:0];
-//  view.label.text = text;
-//  return view;
-//}
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+  if (!self.headerViewBlock) return nil;
+
+  if (kind == UICollectionElementKindSectionHeader) {
+    UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
+    self.headerViewBlock(collectionView, view, indexPath.section);
+    return view;
+  }
+
+  return nil;
+}
 
 #pragma mark UICollectionViewDelegate
 
@@ -107,11 +98,15 @@
   return (self.selectBlock != NULL);
 }
 
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-//  if ([self countForSection:section] == 0) return CGSizeZero;
-//  NSString *text = [self headerTextForSection:section];
-//  if (text) return CGSizeMake(320, 38); // TODO: Configurable size
-//  return CGSizeZero;
-//}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+  if ([self countForSection:section] == 0) return CGSizeZero;
+  if (!self.headerViewBlock) return CGSizeZero;
+
+//  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:section];
+//  UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
+//  self.headerViewBlock(collectionView, view, section);
+//  return [view sizeThatFits:collectionView.frame.size];
+  return CGSizeMake(collectionView.frame.size.width, 20);
+}
 
 @end
