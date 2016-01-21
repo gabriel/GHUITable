@@ -43,7 +43,10 @@
   GHUITextImageView *view3 = [[GHUITextImageView alloc] init];
   [view3 setName:@"GHUIExampleMultiCellTableView" description:@"This is a example of a GHUITableView with a different cell types based on the data and section." image:nil];
 
-  [_tableView.dataSource addObjects:@[view1, view2, view3] section:0];
+  GHUITextImageView *view4 = [[GHUITextImageView alloc] init];
+  [view4 setName:@"GHUIExampleCollectionView" description:@"This is a example of a GHUICollectionView ." image:nil];
+
+  [_tableView.dataSource addObjects:@[view1, view2, view3, view4] section:0];
 
   _tableView.dataSource.selectBlock = ^(UITableView *tableView, NSIndexPath *indexPath, GHUITextImageView *view) {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

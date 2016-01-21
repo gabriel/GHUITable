@@ -138,7 +138,42 @@ GHUITextImageCell *cell = [[GHUITextImageCell alloc] init];
 
 ## GHUICollectionView
 
-Example coming soon.
+```objc
+GHUICollectionView *view = [[GHUICollectionView alloc] init];
+view.backgroundColor = [UIColor grayColor];
+
+// These are all the cells that will be used, usually it's just one.
+[view registerClasses:@[GHUITextImageCollectionCell.class]];
+
+// This block returns the cell class.
+// It can be based on the data or section, or (in this case) can be constant.
+view.dataSource.classBlock = ^Class(id object, NSIndexPath *indexPath) {
+  return GHUITextImageCollectionCell.class;
+};
+
+// Set the data on the cell.
+view.dataSource.cellSetBlock = ^(GHUITextImageCollectionCell *cell, NSDictionary *dict, NSIndexPath *indexPath, UITableView *tableView, BOOL dequeued) {
+  [cell.viewForContent setName:dict[@"name"] description:dict[@"description"] image:[UIImage imageNamed:dict[@"imageName"]]];
+};
+
+// Set what happens when a user selects a cell.
+view.dataSource.selectBlock = ^(UICollectionView *collectionView, NSIndexPath *indexPath, NSString *object) {
+[collectionView deselectItemAtIndexPath:indexPath animated:YES];
+  NSLog(@"Selected: %@", indexPath);
+  // Do something
+};
+
+// The data
+[_view setObjects:
+  @[
+    @{@"name": @"Gastropub swag pork belly, butcher selvage mustache chambray scenester pour-over.",
+    @"description": @"Cosby sweater stumptown Carles letterpress, roof party deep v gastropub next level. Tattooed bitters distillery, scenester PBR&B pork belly swag twee DIY. Mixtape plaid Carles photo booth sustainable you probably haven't heard of them. Vice normcore fap Thundercats Williamsburg Truffaut paleo small batch, plaid PBR&B Brooklyn jean shorts. Next level lomo direct trade farm-to-table, cred hoodie post-ironic fingerstache pop-up put a bird on it. Keytar PBR literally, DIY Bushwick Pinterest bicycle rights.",
+    @"imageName": @"Preview2"},
+    @{@"name": @"YOLO irony beard",
+    @"description": @"Raw denim Tumblr roof party beard gentrify pickled, art party ethical",
+    @"imageName": @"Preview2"}
+  ] section:0];
+```
 
 ## GHUIYapTableView
 

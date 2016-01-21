@@ -21,7 +21,7 @@
 
 @dynamic dataSource;
 
-- (void)sharedInit {
+- (void)viewInit {
   _defaultDataSource = [[GHUICollectionViewDataSource alloc] init];
   self.dataSource = _defaultDataSource;
   self.delegate = _defaultDataSource;
@@ -32,14 +32,14 @@
 
 - (id)initWithCoder:(NSCoder *)coder {
   if ((self = [super initWithCoder:coder])) {
-    [self sharedInit];
+    [self viewInit];
   }
   return self;
 }
 
 - (id)initWithFrame:(CGRect)frame {
   if ((self = [super initWithFrame:frame collectionViewLayout:[[UICollectionViewFlowLayout alloc] init]])) {
-    [self sharedInit];
+    [self viewInit];
   }
   return self;
 }
@@ -76,6 +76,21 @@
     NSMutableArray *indexPaths = [NSMutableArray array];
     [blockSelf.dataSource removeObjects:objects section:section indexPaths:indexPaths];
     [blockSelf deleteItemsAtIndexPaths:indexPaths];
+  } completion:completion];
+}
+
+- (void)setObjects:(NSArray *)objects section:(NSInteger)section {
+  [self.dataSource setObjects:objects section:section];
+  [self reloadData];
+}
+
+- (void)setObjects:(NSArray *)objects section:(NSInteger)section completion:(void (^)(BOOL finished))completion {
+  [self performBatchUpdates:^(){
+    NSMutableArray *indexPathsToRemove = [NSMutableArray array];
+    NSMutableArray *indexPathsToAdd = [NSMutableArray array];
+    [self.dataSource setObjects:objects section:section indexPathsToRemove:indexPathsToRemove indexPathsToAdd:indexPathsToAdd];
+    [self deleteItemsAtIndexPaths:indexPathsToRemove];
+    [self insertItemsAtIndexPaths:indexPathsToAdd];
   } completion:completion];
 }
 
@@ -129,6 +144,12 @@
 
 - (void)registerCellClass:(Class)cellClass {
   [self registerClass:cellClass forCellWithReuseIdentifier:NSStringFromClass(cellClass)];
+}
+
+- (void)registerClasses:(NSArray */*of Class*/)classes {
+  for (Class clazz in classes) {
+    [self registerClass:clazz forCellWithReuseIdentifier:NSStringFromClass(clazz)];
+  }
 }
 
 - (void)scrollToBottomAfterReload:(BOOL)animated topOffset:(CGFloat)topOffset {

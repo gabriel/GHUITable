@@ -26,3 +26,5 @@
 @interface GHUITextImageCell : GHUITableViewCell
 @end
 
+@interface GHUITextImageCollectionCell : GHUICollectionViewCell
+@end

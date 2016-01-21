@@ -18,7 +18,7 @@
 
 @dynamic dataSource;
 
-- (void)sharedInit {
+- (void)viewInit {
   [self resetDataSource];
   
   self.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
@@ -26,14 +26,14 @@
 
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
   if ((self = [super initWithFrame:frame style:style])) {
-    [self sharedInit];
+    [self viewInit];
   }
   return self;
 }
 
 - (id)initWithCoder:(NSCoder *)coder {
   if ((self = [super initWithCoder:coder])) {
-    [self sharedInit];
+    [self viewInit];
   }
   return self;
 }

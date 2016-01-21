@@ -1,45 +1,81 @@
 PODS:
-  - AFNetworking (2.5.4):
-    - AFNetworking/NSURLConnection (= 2.5.4)
-    - AFNetworking/NSURLSession (= 2.5.4)
-    - AFNetworking/Reachability (= 2.5.4)
-    - AFNetworking/Security (= 2.5.4)
-    - AFNetworking/Serialization (= 2.5.4)
-    - AFNetworking/UIKit (= 2.5.4)
-  - AFNetworking/NSURLConnection (2.5.4):
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.4):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.4)
-  - AFNetworking/Security (2.5.4)
-  - AFNetworking/Serialization (2.5.4)
-  - AFNetworking/UIKit (2.5.4):
-    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
-  - CocoaLumberjack (1.9.2):
-    - CocoaLumberjack/Extensions (= 1.9.2)
-  - CocoaLumberjack/Core (1.9.2)
-  - CocoaLumberjack/Extensions (1.9.2):
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
     - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
   - GHKit (2.0.0)
-  - GHUITable (0.1.8):
-    - GHUITable/Core (= 0.1.8)
-  - GHUITable/Core (0.1.8):
+  - GHUITable (0.1.9):
+    - GHUITable/Core (= 0.1.9)
+  - GHUITable/Core (0.1.9):
     - GHKit
     - ObjectiveSugar
   - ObjectiveSugar (1.1.0)
-  - SDWebImage (3.7.2):
-    - SDWebImage/Core (= 3.7.2)
-  - SDWebImage/Core (3.7.2)
-  - YapDatabase (2.6.4):
-    - YapDatabase/standard (= 2.6.4)
-  - YapDatabase/standard (2.6.4):
-    - CocoaLumberjack (~> 1)
-  - YOLayout (0.1.17)
+  - SDWebImage (3.7.4):
+    - SDWebImage/Core (= 3.7.4)
+  - SDWebImage/Core (3.7.4)
+  - YapDatabase (2.8.1):
+    - YapDatabase/Standard (= 2.8.1)
+  - YapDatabase/Standard (2.8.1):
+    - YapDatabase/Standard/Core (= 2.8.1)
+    - YapDatabase/Standard/Extensions (= 2.8.1)
+  - YapDatabase/Standard/Core (2.8.1):
+    - CocoaLumberjack (~> 2)
+  - YapDatabase/Standard/Extensions (2.8.1):
+    - YapDatabase/Standard/Core
+    - YapDatabase/Standard/Extensions/CloudKit (= 2.8.1)
+    - YapDatabase/Standard/Extensions/ConnectionProxy (= 2.8.1)
+    - YapDatabase/Standard/Extensions/FilteredViews (= 2.8.1)
+    - YapDatabase/Standard/Extensions/FullTextSearch (= 2.8.1)
+    - YapDatabase/Standard/Extensions/Hooks (= 2.8.1)
+    - YapDatabase/Standard/Extensions/Relationships (= 2.8.1)
+    - YapDatabase/Standard/Extensions/RTreeIndex (= 2.8.1)
+    - YapDatabase/Standard/Extensions/SearchResults (= 2.8.1)
+    - YapDatabase/Standard/Extensions/SecondaryIndex (= 2.8.1)
+    - YapDatabase/Standard/Extensions/SecondaryIndex (= 2.8.1)
+    - YapDatabase/Standard/Extensions/Views (= 2.8.1)
+  - YapDatabase/Standard/Extensions/CloudKit (2.8.1):
+    - YapDatabase/Standard/Core
+  - YapDatabase/Standard/Extensions/ConnectionProxy (2.8.1):
+    - YapDatabase/Standard/Core
+  - YapDatabase/Standard/Extensions/FilteredViews (2.8.1):
+    - YapDatabase/Standard/Core
+    - YapDatabase/Standard/Extensions/Views
+  - YapDatabase/Standard/Extensions/FullTextSearch (2.8.1):
+    - YapDatabase/Standard/Core
+  - YapDatabase/Standard/Extensions/Hooks (2.8.1):
+    - YapDatabase/Standard/Core
+  - YapDatabase/Standard/Extensions/Relationships (2.8.1):
+    - YapDatabase/Standard/Core
+  - YapDatabase/Standard/Extensions/RTreeIndex (2.8.1):
+    - YapDatabase/Standard/Core
+  - YapDatabase/Standard/Extensions/SearchResults (2.8.1):
+    - YapDatabase/Standard/Core
+    - YapDatabase/Standard/Extensions/FullTextSearch
+    - YapDatabase/Standard/Extensions/Views
+  - YapDatabase/Standard/Extensions/SecondaryIndex (2.8.1):
+    - YapDatabase/Standard/Core
+  - YapDatabase/Standard/Extensions/Views (2.8.1):
+    - YapDatabase/Standard/Core
+  - YOLayout (0.2.12)
 
 DEPENDENCIES:
   - AFNetworking
@@ -55,13 +91,15 @@ EXTERNAL SOURCES:
     :path: "../../GHUITable/"
 
 SPEC CHECKSUMS:
-  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  CocoaLumberjack: 628fca2e88ef06f7cf6817309aa405f325d9a6fa
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   GHKit: 29e5361c9d8a33343ae5ed4698057d1533ee590b
-  GHUITable: 02231bbf859caf55d639677bdca703c086195a18
+  GHUITable: 76a2be759467f2a6322b697d1c47e0a3d0c245b6
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
-  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
-  YapDatabase: f9051e178a38f48d0f3a78562423a5bc969f1ca3
-  YOLayout: 71d403f99c77c24345803ad90a2f7ea735585bfd
+  SDWebImage: 247edd7dd80dd6124197b0d6a17846fe9d1df968
+  YapDatabase: 861c720d5850a59f9e5c0bad0fd95334012b9dc9
+  YOLayout: 3f5b3ac64f9018f1e63a19223dbb8382c37d58cb
 
-COCOAPODS: 0.37.2
+PODFILE CHECKSUM: 0d6e1de374ed5ca93ab284a196174f0e2104a5ca
+
+COCOAPODS: 1.0.0.beta.2

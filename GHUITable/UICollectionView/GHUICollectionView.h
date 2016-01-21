@@ -20,14 +20,13 @@ typedef void (^GHUICollectionViewRefreshBlock)(GHUICollectionView *collectionVie
 @property (copy) GHUICollectionViewRefreshBlock refreshBlock;
 @property CGFloat minimumLineSpacing;
 
-/*!
- Shared init.
- */
-- (void)sharedInit;
-
-
 - (void)addObjects:(NSArray *)objects section:(NSInteger)section completion:(void (^)(BOOL finished))completion;
+
 - (void)removeObjects:(NSArray *)objects section:(NSInteger)section completion:(void (^)(BOOL finished))completion;
+
+- (void)setObjects:(NSArray *)objects section:(NSInteger)section;
+
+- (void)setObjects:(NSArray *)objects section:(NSInteger)section completion:(void (^)(BOOL finished))completion;
 
 /*!
  Set refreshing indicator.
@@ -58,5 +57,6 @@ typedef void (^GHUICollectionViewRefreshBlock)(GHUICollectionView *collectionVie
 - (void)scrollToBottomAfterReload:(BOOL)animated topOffset:(CGFloat)topOffset;
 
 - (void)registerCellClass:(Class)cellClass;
+- (void)registerClasses:(NSArray */*of Class*/)classes;
 
 @end

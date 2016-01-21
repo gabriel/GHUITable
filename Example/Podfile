@@ -1,12 +1,14 @@
-platform :ios, "7.0"
 
-pod "GHUITable", :path => "../../GHUITable/"
+target "Example" do
+  platform :ios, "8.0"
 
-pod "GHKit"
-pod "ObjectiveSugar"
+  pod "GHUITable", :path => "../../GHUITable/"
 
-pod "AFNetworking"
-pod "YapDatabase"
-pod "YOLayout"
-pod "SDWebImage"
+  pod "GHKit"
+  pod "ObjectiveSugar"
 
+  pod "AFNetworking"
+  pod "YapDatabase"
+  pod "YOLayout"
+  pod "SDWebImage"
+end

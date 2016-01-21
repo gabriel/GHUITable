@@ -16,8 +16,6 @@
 + (instancetype)tableView;
 + (instancetype)groupedTableView;
 
-- (void)sharedInit;
-
 - (void)registerClasses:(NSArray */*of Class*/)classes;
 
 - (void)setObjects:(NSArray *)objects animated:(BOOL)animated;

@@ -39,13 +39,19 @@
     CGFloat x = 15;
     CGFloat y = 10;
 
+    CGFloat minY = 0;
     if (_imageView.image || _imageView.sd_imageURL) {
-      x += [layout setFrame:CGRectMake(x, y, 50, 50) view:_imageView].size.width + 10;
+      CGSize imageSize = [layout setFrame:CGRectMake(x, y, 50, 50) view:_imageView].size;
+      x += imageSize.width;
+      minY = y + 10;
     }
 
     y += [layout sizeToFitVerticalInFrame:CGRectMake(x, y, size.width - x - 5, 0) view:_nameLabel].size.height + 4;
     y += [layout sizeToFitVerticalInFrame:CGRectMake(x, y, size.width - x - 5, 0) view:_descriptionLabel].size.height + 10;
-    return CGSizeMake(size.width, y);
+
+    if (y < minY) y = minY;
+
+    return CGSizeMake(size.width, y + 20);
   }];
 }
 
@@ -75,6 +81,14 @@
 
 
 @implementation GHUITextImageCell
+
++ (Class)contentViewClass {
+  return GHUITextImageView.class;
+}
+
+@end
+
+@implementation GHUITextImageCollectionCell
 
 + (Class)contentViewClass {
   return GHUITextImageView.class;

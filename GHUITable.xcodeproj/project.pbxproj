@@ -30,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00B544A41A8AB3370044CC5B /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		00B544A41A8AB3370044CC5B /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		00B544A51A8AB4AB0044CC5B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		00B544AF1A8AB80F0044CC5B /* GHUITable.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = GHUITable.podspec; sourceTree = "<group>"; };
 		00B544B11A8AB8160044CC5B /* GHUITable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUITable.h; sourceTree = "<group>"; };
