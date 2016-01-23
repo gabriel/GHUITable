@@ -8,7 +8,7 @@
 
 #import "GHUICellDataSource.h"
 
-typedef void (^GHUICellCollectionHeaderViewBlock)(UICollectionView *collectionView, UICollectionReusableView *view, NSInteger section);
+typedef UICollectionReusableView *(^GHUICellCollectionHeaderViewBlock)(UICollectionView *collectionView, id view, NSInteger section);
 
 @interface GHUICollectionViewDataSource : GHUICellDataSource <UICollectionViewDataSource, UICollectionViewDelegate>
 

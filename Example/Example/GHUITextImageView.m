@@ -42,7 +42,7 @@
     CGFloat minY = 0;
     if (_imageView.image || _imageView.sd_imageURL) {
       CGSize imageSize = [layout setFrame:CGRectMake(x, y, 50, 50) view:_imageView].size;
-      x += imageSize.width;
+      x += imageSize.width + 10;
       minY = y + 10;
     }
 

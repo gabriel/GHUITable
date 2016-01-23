@@ -94,6 +94,11 @@
   } completion:completion];
 }
 
+- (void)registerHeaderClass:(Class)clazz {
+  [self registerClass:clazz forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];
+}
+
+
 // Forces reloadData to invalidate a cache in the datasource if present
 - (void)reloadData {
   if ([self.dataSource respondsToSelector:@selector(invalidateAll)]) {

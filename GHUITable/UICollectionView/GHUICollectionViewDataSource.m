@@ -59,8 +59,7 @@
 
   if (kind == UICollectionElementKindSectionHeader) {
     UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
-    self.headerViewBlock(collectionView, view, indexPath.section);
-    return view;
+    return self.headerViewBlock(collectionView, view, indexPath.section);
   }
 
   return nil;
@@ -102,11 +101,9 @@
   if ([self countForSection:section] == 0) return CGSizeZero;
   if (!self.headerViewBlock) return CGSizeZero;
 
-//  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:section];
-//  UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
-//  self.headerViewBlock(collectionView, view, section);
-//  return [view sizeThatFits:collectionView.frame.size];
-  return CGSizeMake(collectionView.frame.size.width, 20);
+  UICollectionReusableView *view = self.headerViewBlock(collectionView, nil, section);
+  if (!view) return CGSizeZero;
+  return [view sizeThatFits:collectionView.frame.size];
 }
 
 @end

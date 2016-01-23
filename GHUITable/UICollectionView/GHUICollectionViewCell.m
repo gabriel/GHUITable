@@ -52,6 +52,11 @@
   return nil;
 }
 
+- (void)prepareForReuse {
+  [super prepareForReuse];
+  [self.viewForContent setNeedsLayout];
+}
+
 - (UIView *)viewForContent {
   if (!_viewForContent) {
     Class contentViewClass = [[self class] contentViewClass];

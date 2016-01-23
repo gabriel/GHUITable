@@ -59,4 +59,6 @@ typedef void (^GHUICollectionViewRefreshBlock)(GHUICollectionView *collectionVie
 - (void)registerCellClass:(Class)cellClass;
 - (void)registerClasses:(NSArray */*of Class*/)classes;
 
+- (void)registerHeaderClass:(Class)clazz;
+
 @end

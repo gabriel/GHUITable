@@ -163,6 +163,15 @@ view.dataSource.selectBlock = ^(UICollectionView *collectionView, NSIndexPath *i
   // Do something
 };
 
+// Set header view
+[_view registerHeaderClass:GHUICollectionHeaderLabelView.class];
+  _view.dataSource.headerViewBlock = ^(UICollectionView *collectionView, GHUICollectionHeaderLabelView *view, NSInteger section) {
+  view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
+  view.label.textColor = [UIColor colorWithRed:255.0f/255.0f green:125.0f/255.0f blue:0.0f/255.0f alpha:1.0];
+  view.label.font = [UIFont systemFontOfSize:18];
+  view.label.text = [NSString stringWithFormat:@"Section %@", @(section)];
+};
+
 // The data
 [_view setObjects:
   @[

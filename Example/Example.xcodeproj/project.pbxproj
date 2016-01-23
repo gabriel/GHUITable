@@ -18,9 +18,9 @@
 		00B545161A8AB8790044CC5B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B545031A8AB8790044CC5B /* Images.xcassets */; };
 		00B545171A8AB8790044CC5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B545041A8AB8790044CC5B /* main.m */; };
 		00B545181A8AB8790044CC5B /* unsplash1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00B545061A8AB8790044CC5B /* unsplash1.jpg */; };
+		00BF6ED61C531CD90013FC0F /* GHHeaderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF6ED51C531CD90013FC0F /* GHHeaderLabel.m */; };
 		00E2066D1C5061120095FD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E2066C1C5061120095FD56 /* LaunchScreen.storyboard */; };
 		00E206701C5061640095FD56 /* GHUIExampleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E2066F1C5061640095FD56 /* GHUIExampleCollectionView.m */; };
-		00E206731C506D5E0095FD56 /* GHUICollectionHeaderLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E206721C506D5E0095FD56 /* GHUICollectionHeaderLabelView.m */; };
 		00E64C031A8AC36200CACF44 /* GHUIExampleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E64C021A8AC36200CACF44 /* GHUIExampleTableView.m */; };
 		00E64C061A8AC54000CACF44 /* GHMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E64C051A8AC54000CACF44 /* GHMainView.m */; };
 		BAE3EE8D36A884BFC718818E /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6291001CEDA77811D806DC2D /* libPods-Example.a */; };
@@ -46,12 +46,11 @@
 		00B545031A8AB8790044CC5B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		00B545041A8AB8790044CC5B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00B545061A8AB8790044CC5B /* unsplash1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unsplash1.jpg; sourceTree = "<group>"; };
+		00BF6ED41C531CD90013FC0F /* GHHeaderLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHHeaderLabel.h; sourceTree = "<group>"; };
+		00BF6ED51C531CD90013FC0F /* GHHeaderLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHHeaderLabel.m; sourceTree = "<group>"; };
 		00E2066C1C5061120095FD56 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00E2066E1C5061640095FD56 /* GHUIExampleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIExampleCollectionView.h; sourceTree = "<group>"; };
 		00E2066F1C5061640095FD56 /* GHUIExampleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIExampleCollectionView.m; sourceTree = "<group>"; };
-		00E206711C506D5E0095FD56 /* GHUICollectionHeaderLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUICollectionHeaderLabelView.h; sourceTree = "<group>"; };
-		00E206721C506D5E0095FD56 /* GHUICollectionHeaderLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUICollectionHeaderLabelView.m; sourceTree = "<group>"; };
-		00E206741C5070A70095FD56 /* GHUITable.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = GHUITable.podspec; sourceTree = "<group>"; };
 		00E64C011A8AC36200CACF44 /* GHUIExampleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIExampleTableView.h; sourceTree = "<group>"; };
 		00E64C021A8AC36200CACF44 /* GHUIExampleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIExampleTableView.m; sourceTree = "<group>"; };
 		00E64C041A8AC54000CACF44 /* GHMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHMainView.h; sourceTree = "<group>"; };
@@ -82,7 +81,6 @@
 			children = (
 				00E64C071A8ACA7B00CACF44 /* README.md */,
 				00A4124A1829DC9300C5A20F /* Podfile */,
-				00E206741C5070A70095FD56 /* GHUITable.podspec */,
 				00B544E41A8AB8790044CC5B /* Example */,
 				00A4121A1829DC5900C5A20F /* Frameworks */,
 				00A412191829DC5900C5A20F /* Products */,
@@ -123,10 +121,10 @@
 				00B544FE1A8AB8790044CC5B /* GHUIExampleMultiCellTableView.m */,
 				00E2066E1C5061640095FD56 /* GHUIExampleCollectionView.h */,
 				00E2066F1C5061640095FD56 /* GHUIExampleCollectionView.m */,
-				00E206711C506D5E0095FD56 /* GHUICollectionHeaderLabelView.h */,
-				00E206721C506D5E0095FD56 /* GHUICollectionHeaderLabelView.m */,
 				00B544F11A8AB8790044CC5B /* GHUITextImageView.h */,
 				00B544F21A8AB8790044CC5B /* GHUITextImageView.m */,
+				00BF6ED41C531CD90013FC0F /* GHHeaderLabel.h */,
+				00BF6ED51C531CD90013FC0F /* GHHeaderLabel.m */,
 				00B544FB1A8AB8790044CC5B /* GHUISwitchView.h */,
 				00B544FC1A8AB8790044CC5B /* GHUISwitchView.m */,
 				00E64C041A8AC54000CACF44 /* GHMainView.h */,
@@ -273,12 +271,12 @@
 			files = (
 				00E206701C5061640095FD56 /* GHUIExampleCollectionView.m in Sources */,
 				00B545131A8AB8790044CC5B /* GHUIExampleMultiCellTableView.m in Sources */,
+				00BF6ED61C531CD90013FC0F /* GHHeaderLabel.m in Sources */,
 				00B545121A8AB8790044CC5B /* GHUISwitchView.m in Sources */,
 				00B545071A8AB8790044CC5B /* AppDelegate.m in Sources */,
 				00B5450D1A8AB8790044CC5B /* GHUITextImageView.m in Sources */,
 				00B545111A8AB8790044CC5B /* GHUIExampleStaticTableView.m in Sources */,
 				00E64C031A8AC36200CACF44 /* GHUIExampleTableView.m in Sources */,
-				00E206731C506D5E0095FD56 /* GHUICollectionHeaderLabelView.m in Sources */,
 				00E64C061A8AC54000CACF44 /* GHMainView.m in Sources */,
 				00B545171A8AB8790044CC5B /* main.m in Sources */,
 			);

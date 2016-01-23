@@ -9,7 +9,7 @@
 #import "GHUIExampleCollectionView.h"
 
 #import "GHUITextImageView.h"
-#import "GHUICollectionHeaderLabelView.h"
+#import "GHHeaderLabel.h"
 
 @interface GHUIExampleCollectionView ()
 @property GHUICollectionView *view;
@@ -39,8 +39,8 @@
   };
 
   // Set the data on the cell.
-  _view.dataSource.cellSetBlock = ^(GHUITextImageCollectionCell *cell, NSDictionary *dict, NSIndexPath *indexPath, UITableView *tableView, BOOL dequeued) {
-    [cell.viewForContent setName:dict[@"name"] description:dict[@"description"] image:[UIImage imageNamed:dict[@"imageName"]]];
+  _view.dataSource.cellSetBlock = ^(id cell, NSDictionary *dict, NSIndexPath *indexPath, UITableView *tableView, BOOL dequeued) {
+    [((GHUITextImageCollectionCell *)cell).viewForContent setName:dict[@"name"] description:dict[@"description"] image:[UIImage imageNamed:dict[@"imageName"]]];
   };
 
   // Set what happens when a user selects a cell.
@@ -51,13 +51,14 @@
   };
 
   // Set header view
-  [_view registerClass:GHUICollectionHeaderLabelView.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];
-  _view.dataSource.headerViewBlock = ^(UICollectionView *collectionView, UICollectionReusableView *view, NSInteger section) {
+  [_view registerHeaderClass:GHHeaderLabel.class];
+  _view.dataSource.headerViewBlock = ^UICollectionReusableView *(UICollectionView *collectionView, GHHeaderLabel *view, NSInteger section) {
+    if (section == 2) return nil;
+    if (!view) view = [[GHHeaderLabel alloc] init];
     view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
-    UILabel *label = ((GHUICollectionHeaderLabelView *)view).label;
-    label.textColor = [UIColor colorWithRed:255.0f/255.0f green:125.0f/255.0f blue:0.0f/255.0f alpha:1.0];
-    label.font = [UIFont systemFontOfSize:18];
-    label.text = [NSString stringWithFormat:@"Section %@", @(section)];
+    view.text = [NSString stringWithFormat:@"Section %@", @(section)];
+    [view sizeToFit];
+    return view;
   };
 
   // The data
@@ -75,6 +76,10 @@
        @"description": @"Raw denim Tumblr roof party beard gentrify pickled, art party ethical",
        @"imageName": @"Preview2"}
      ] section:1];
+
+  [_view setObjects:
+   @[
+     @{@"name": @"Name1", @"description": @"This is a description #1", @"imageName": @"Preview2"}] section:2];
 }
 
 - (void)layoutSubviews {
