@@ -31,9 +31,13 @@
 }
 
 - (NSInteger)sectionCount {
-  NSInteger sectionCount = [_sections count];
-  if (sectionCount < _minSectionCount) return _minSectionCount;
-  return sectionCount;
+  NSInteger sectionMax = 0;
+  for (NSNumber *n in _sections.keyEnumerator) {
+    NSInteger sectionCount = [n integerValue] + 1;
+    if (sectionCount > sectionMax) sectionMax = sectionCount;
+  }
+  if (sectionMax < _minSectionCount) return _minSectionCount;
+  return sectionMax;
 }
 
 - (NSMutableArray *)objectsForSection:(NSInteger)section {
