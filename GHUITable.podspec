@@ -33,10 +33,4 @@ Pod::Spec.new do |s|
     sp.dependency "YapDatabase"
   end
 
-  s.subspec "YapSQLCipher" do |sp|
-    sp.source_files = "YapTableView/**/*.{h,m}"
-    sp.dependency "GHUITable/Core"
-    sp.dependency "YapDatabase/SQLCipher"
-  end
-
 end
