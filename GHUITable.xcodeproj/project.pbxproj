@@ -195,12 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00BA9F421B17B6530072167B /* Build configuration list for PBXNativeTarget "GHUITable" */;
 			buildPhases = (
-				B585AE09CFB24D104C7C4670 /* Check Pods Manifest.lock */,
+				B585AE09CFB24D104C7C4670 /* 📦 Check Pods Manifest.lock */,
 				00BA9F2A1B17B6530072167B /* Sources */,
 				00BA9F2B1B17B6530072167B /* Frameworks */,
 				00BA9F2C1B17B6530072167B /* Headers */,
 				00BA9F2D1B17B6530072167B /* Resources */,
-				A61C100B15BAFE8DBA67C570 /* Copy Pods Resources */,
+				A61C100B15BAFE8DBA67C570 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,14 +253,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A61C100B15BAFE8DBA67C570 /* Copy Pods Resources */ = {
+		A61C100B15BAFE8DBA67C570 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,14 +268,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GHUITable/Pods-GHUITable-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B585AE09CFB24D104C7C4670 /* Check Pods Manifest.lock */ = {
+		B585AE09CFB24D104C7C4670 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
