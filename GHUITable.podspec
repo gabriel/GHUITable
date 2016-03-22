@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "GHUITable"
-  s.version      = "0.1.11"
+  s.version      = "0.1.13"
   s.summary      = "Table UI framework."
   s.homepage     = "https://github.com/gabriel/GHUITable"
   s.license      = "MIT"
@@ -31,6 +31,12 @@ Pod::Spec.new do |s|
     sp.source_files = "YapTableView/**/*.{h,m}"
     sp.dependency "GHUITable/Core"
     sp.dependency "YapDatabase"
+  end
+
+  s.subspec "YapSQLCipher" do |sp|
+    sp.source_files = "YapTableView/**/*.{h,m}"
+    sp.dependency "GHUITable/Core"
+    sp.dependency "YapDatabase/SQLCipher"
   end
 
 end
