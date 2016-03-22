@@ -16,4 +16,8 @@
 
 - (id)viewForContent;
 
++ (GHUICollectionViewCell *)collectionViewCellForContentView:(UIView *)contentView;
+
+- (void)setViewForContent:(UIView *)viewForContent;
+
 @end

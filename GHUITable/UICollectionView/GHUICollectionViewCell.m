@@ -9,7 +9,7 @@
 #import "GHUICollectionViewCell.h"
 
 @interface GHUICollectionViewCell ()
-@property (nonatomic) UIView *viewForContent;
+@property (nonatomic) UIView *viewForContentProp;
 @end
 
 @implementation GHUICollectionViewCell
@@ -40,7 +40,7 @@
 
 - (void)layoutSubviews {
   [super layoutSubviews];
-  self.viewForContent.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+  self.viewForContentProp.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
@@ -58,13 +58,25 @@
 }
 
 - (UIView *)viewForContent {
-  if (!_viewForContent) {
+  if (!_viewForContentProp) {
     Class contentViewClass = [[self class] contentViewClass];
     NSAssert(contentViewClass, @"Not contentViewClass. You forgot to implement contentViewClass class method?");
-    _viewForContent = [[contentViewClass alloc] init];
-    [self.contentView addSubview:_viewForContent];
+    _viewForContentProp = [[contentViewClass alloc] init];
+    [self.contentView addSubview:_viewForContentProp];
   }
-  return _viewForContent;
+  return _viewForContentProp;
+}
+
+- (void)setViewForContent:(UIView *)viewForContent {
+  [_viewForContentProp removeFromSuperview];
+  _viewForContentProp = viewForContent;
+  [self.contentView addSubview:_viewForContentProp];
+}
+
++ (GHUICollectionViewCell *)collectionViewCellForContentView:(UIView *)contentView {
+  GHUICollectionViewCell *cell = [[self alloc] init];
+  cell.viewForContent = contentView;
+  return cell;
 }
 
 @end
