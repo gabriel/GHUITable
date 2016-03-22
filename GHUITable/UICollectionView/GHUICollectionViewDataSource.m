@@ -36,6 +36,14 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+  id object = [self objectAtIndexPath:indexPath];
+
+  if ([object isKindOfClass:[UIView class]]) {
+    GHUICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(GHUICollectionViewCell.class) forIndexPath:indexPath];
+    cell.viewForContent = object;
+    return cell;
+  }
+  
   Class cellClass = [self cellClassForIndexPath:indexPath];
   id cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(cellClass) forIndexPath:indexPath];
   BOOL dequeued = YES;
@@ -98,12 +106,16 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-  if ([self countForSection:section] == 0) return CGSizeZero;
-  if (!self.headerViewBlock) return CGSizeZero;
+  if (!self.headerViewBlock) {
+    return CGSizeZero;
+  }
 
   UICollectionReusableView *view = self.headerViewBlock(collectionView, nil, section);
-  if (!view) return CGSizeZero;
-  return [view sizeThatFits:collectionView.frame.size];
+  if (!view) {
+    return CGSizeZero;
+  }
+  CGSize size = [view sizeThatFits:collectionView.frame.size];
+  return size;
 }
 
 @end

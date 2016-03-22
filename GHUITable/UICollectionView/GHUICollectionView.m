@@ -7,6 +7,7 @@
 //
 
 #import "GHUICollectionView.h"
+#import "GHUICollectionViewCell.h"
 
 @interface GHUICollectionView ()
 @property GHUICollectionViewDataSource *defaultDataSource; // Default dataSource/delegate used in init
@@ -28,6 +29,8 @@
 
   self.alwaysBounceVertical = YES;
   [self setMinimumLineSpacing:1];
+
+  [self registerClasses:@[GHUICollectionViewCell.class]];
 }
 
 - (id)initWithCoder:(NSCoder *)coder {
@@ -104,6 +107,8 @@
   if ([self.dataSource respondsToSelector:@selector(invalidateAll)]) {
     [self.dataSource performSelector:@selector(invalidateAll)];
   }
+  // Relayout headers
+  [self.collectionViewLayout invalidateLayout];
   [super reloadData];
 }
 
